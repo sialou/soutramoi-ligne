@@ -1,0 +1,96 @@
+
+<div class="container top-50" style="background: linear-gradient(to bottom, #3498db, #fff);margin-bottom: 100px;">
+  <div class="row">
+    <div class="col-md-6 ">
+      <p class="fs-1 text-center fw-bold mt-5">Qui sommes-nous?</p>
+      <p class="fs-5 text-center top-20 lh-lg">Depuis 2021, nous améliorons votre quotidien en vous offrant des professionnels compétents et qualifiés afin de résoudre tous vos problèmes de dépannage.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="../../../assets/propos1.png"  style="width: 30%;float: inline-end;margin-top: 20px;" alt="Your Image" class=" float-right">
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+<p class="fs-5 text-center lh-lg">Remodeler votre maison peut-être stressant… Il est difficile de savoir vers qui se tourner en cas de réparation urgente…
+
+  Le travail commercial doit être effectué de façon professionnelle et dans les délais, tout en tenant compte des codes et des réglementations…Eh bien, tout ça c’est fini car Nous éliminons le besoin de feuilleter les pages jaunes, nous éliminons le stress et l'inquiétude, plus important encore, nous faisons le travail correctement.
+
+  Nos professionnels sont expérimentés et fiables. De plus, leurs compétences sont perfectionnées par le biais de formations concernant tant le niveau technique que la gestion de la clientèle.
+  Nous nous engageons à vous fournir un service exceptionnel, digne de confiance, pour tous vos besoins de réparation et de dépannage.</p>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../../../assets/propos2.png"  style="width: 100%;float: inline-start;" alt="Your Image" class=" float-right">
+    </div>
+    <div class="col-md-6">
+      <p class="fs-5 text-left lh-lg" style="margin-top:30%;">Soutramoi est une entreprise de mise en relation entre les professionnels fiables et les particuliers afin de facilité
+        le quotidien des ménages.
+
+        Permettre à chaque personne de contacter facilement un professionnel de métier fiable et qualifié sans se déplacer, tel est notre mission..</p>
+    </div>
+
+  </div>
+</div>
+<div class="row">
+<div class="col-sm-8  offset-sm-2 text-center  mb-sm-5 text-black border-bottom text-uppercase ">
+  <h2>Ils parlent de nous</h2>
+</div>
+
+<ngb-carousel *ngIf="images.length > 0" class="col-sm-8  offset-sm-2">
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let image of images.slice(0, 3)">
+        <div class="image-container">
+          <img [src]="image.url" alt="Image" class="img-fluid">
+        </div>
+        <!-- Image content for the first slide -->
+
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let image of images.slice(3, 6)">
+        <!-- Image content for the second slide -->
+        <div class="image-container">
+          <img [src]="image.url" alt="Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+
+
+
+<!--<div class="col-sm-8  offset-sm-2 text-center  mb-sm-5 top-50 text-black border-bottom text-uppercase ">
+  <h2>Rejoignez une communauté de clients SOUTRAMOI </h2>
+</div>
+
+<div class="col-sm-2  offset-sm-2 mb-3 mb-sm-5 ">
+  <div class="card">
+    <img src="../../../assets/awe.jpg" class="card-img-top" alt="...">
+  </div>
+</div>
+<div class="col-sm-2   mb-3 mb-sm-5 ">
+  <div class="card">
+    <img src="../../../assets/orange_corners.jpg" class="card-img-top" alt="...">
+  </div>
+</div>
+<div class="col-sm-2   mb-3 mb-sm-5 ">
+  <div class="card">
+    <img src="../../../assets/baab.png" class="card-img-top" alt="...">
+  </div>
+</div>
+<div class="col-sm-2  mb-3 mb-sm-5 ">
+  <div class="card">
+    <img src="../../../assets/startup.png" class="card-img-top" alt="...">
+  </div>
+</div>
+</div>-->
+<!-- slider.component.html -->
+
+

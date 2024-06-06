@@ -1,0 +1,188 @@
+
+<div class="container top-50"  style="background: linear-gradient(to bottom, #3498db, #fff);margin-bottom: 100px;">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="fs-2 text-center fw-bold mt-5 lh-lg">Réserver  vos services de nettoyage</p>
+      <p class="fs-4 text-center lh-lg">Elimination des débris de construction, nettoyage des surfaces,poussière et toilettage</p>
+      <!--<div class="d-grid gap-2 col-6 mx-auto">
+        <button  routerLink="/abonnement" class="btn btn-primary mb-5 btn-lg">Abonner vous à ce service</button>
+     </div>-->
+    </div>
+    <div class="col-md-6">
+      <img src="../../../assets/n4.png"  style="width: 50%;float: inline-end; margin-top: 50px;" alt="Your Image" class=" float-right">
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col fs-5">
+      <span class="fw-bold">56 +</span>
+    <br/>
+    Nettoyeurs pour vous aider
+    </div>
+    <div class="col fs-5">
+      <span class="fw-bold">68 +</span>
+      <br/>
+
+Petits travaux réalisés grâce à Soutramoi
+    </div>
+    <div class="col fs-5">
+      <span class="fw-bold">4.5/5</span>
+      <br/>
+
+
+<p>
+  Note Moyenne des nettoyeurs</p>
+    </div>
+  </div>
+</div>
+<div class="container text-center fs-2 mt-5">
+  Ne laissez pas vos soucis à la maison attendre!
+</div>
+
+<div class="container text-center fs-5 mt-3 mb-5">
+  Commandez votre service de dépannage dès maintenant!
+</div>
+
+<div class="container top-50">
+  <!--<div class="row">
+      <div class="col"  >
+        <p class="text-left fs-5">Élimination des débris de construction</p>
+          <img src="../../../assets/n2.png" class="card-img-top" alt="..." style="width: 20rem;">
+          <button  routerLink="/reservation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Reserver</button>
+      </div>
+      <div class="col" >
+        <p class="text-left fs-5">Nettoyage des surfaces</p>
+          <img src="../../../assets/n3.png" class="card-img-top" alt="..." style="width: 20rem;">
+          <button  routerLink="/reservation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Reserver</button>
+      </div>
+      <div class="col"  >
+        <p class="text-left fs-5">Nettoyage des sanitaires</p>
+        <a routerLink="/menuiserie">
+          <img src="../../../assets/n4.png" class="card-img-top" alt="..." style="width: 20rem;">
+          <button  routerLink="/reservation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Reserver</button>
+        </a>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col" >
+      <p class="text-left fs-5">Élimination des résidus de peinture</p>
+        <img src="../../../assets/n5.png" class="card-img-top" alt="..." style="width: 20rem;">
+        <button  routerLink="/reservation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Reserver</button>
+    </div>
+    <div class="col" >
+      <p class="text-left fs-5">Poussière et toilettage</p>
+        <img src="../../../assets/n6.png" class="card-img-top" alt="..." style="width: 20rem;">
+        <button  routerLink="/reservation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Reserver</button>
+    </div>
+    <div class="col"  >
+      <p class="text-left fs-5">Nettoyage des luminaires</p>
+
+        <img src="../../../assets/n7.png" class="card-img-top" alt="..." style="width: 20rem;">
+        <button  routerLink="/reservation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Reserver</button>
+
+    </div>
+</div>-->
+<div class=" col-md-6 offset-md-3 mb-5 top-50">
+
+
+  <form *ngIf="!formSubmitted" [formGroup]="signupNettoyageForm" (ngSubmit)="onSubmit()">
+
+    <div class="col-12  mb-3 top-50">
+      <label for="InputLastname" class="form-label">Nom et Prénom</label>
+      <input type="text" class="form-control" id="InputLastname" formControlName="name" aria-describedby="emailHelp" required>
+      <div *ngIf="signupNettoyageForm.get('name')?.invalid && signupNettoyageForm.get('name')?.touched">
+        Le service est requis
+      </div>
+    </div>
+
+    <div class="input-field  col-12  mb-3">
+      <select #select1 required formControlName="service">
+        <option value="" disabled selected>Service</option>
+        <option value="elimination_des_debris_de_construction">Élimination des débris de construction</option>
+        <option value="nettoyage_des_surfaces">Nettoyage des surfaces</option>
+        <option value="nettoyage_des_sanitaires">Nettoyage des sanitaires</option>
+        <option value="elimination_des_residu_de_peinture">Élimination des résidus de peinture</option>
+        <option value="poussiere_et_toilettage">Poussière et toilettage</option>
+        <option value="nettoyage_des_luminaires">Nettoyage des luminaires</option>
+      </select>
+      <div *ngIf="signupNettoyageForm.get('service')?.invalid && signupNettoyageForm.get('service')?.touched">
+        Le service est requis
+      </div>
+    </div>
+    <div class="col-12  mb-3">
+      <label for="InputVille" class="form-label">Ville</label>
+      <input type="text" class="form-control" id="InputVille" formControlName="ville" aria-describedby="emailHelp" >
+      <div *ngIf="signupNettoyageForm.get('ville')?.invalid && signupNettoyageForm.get('ville')?.touched">
+        Votre ville est requis
+      </div>
+    </div>
+    <div class="col-12  mb-3">
+      <label for="InputCommune" class="form-label">Commune</label>
+      <input type="text" class="form-control" id="InputCommune"formControlName="commune" aria-describedby="emailHelp" >
+      <div *ngIf="signupNettoyageForm.get('commune')?.invalid && signupNettoyageForm.get('commune')?.touched">
+        Votre commune est requis
+      </div>
+    </div>
+
+    <div class="col-12  mb-3">
+      <label for="InputTelephone" class="form-label">Téléphone</label>
+      <input type="text" class="form-control" id="InputTelephone"  formControlName="tel" aria-describedby="emailHelp" >
+      <div *ngIf="signupNettoyageForm.get('tel')?.invalid && signupNettoyageForm.get('tel')?.touched">
+        Votre téléphone est requis
+      </div>
+    </div>
+
+
+    <div class="d-grid gap-2 col-6 mx-auto top-50">
+       <button type="submit" class="btn light-blue accent-2 waves-effect waves-light">Je réserve</button>
+    </div>
+  </form>
+  <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
+    <span class="blue-text text-darken-2"> Requête soumise nous vous reviendrons sou peu</span>
+  </div>
+<!--<div class="col s5 pull-s7"> <img src="image1.jpg" class="responsive-img" alt="Image 1"></div>-->
+</div>
+</div>
+
+<!--<div class="container text-center fs-5 mt-5">
+  Vous  ne trouvez pas votre panne ?
+  <p><button  routerLink="/personnalisation" class="btn light-blue mt-3 accent-2 waves-effect waves-light">Créer un service personnalisé</button></p>
+</div>-->
+<!--<div class="container text-center fs-3">
+  Choisissez votre ménusier
+</div>
+<div class="container text-center fs-5">
+  Evaluations, badges qualité, expérience et matériel:
+vous avez toutes les clés pour faire le bon choix
+</div>
+<div class="container mt-5">
+  <div class="row">
+      <div class="col me-5" style="background: linear-gradient(180deg, #70D6FF 0%, rgba(112, 214, 255, 0.00) 100%);">
+          <img src="../../../assets/me1.png" class="card-img-top ps-5 pt-5" alt="..." style="width: 18rem;">
+          <p class="col mt-4">Bonjour Je suis Jordan Kouamé menuisier expérimenté(8ans). </p>
+          <button  routerLink="/profil" class="btn btn-outline-primary mt-5 btn-lg me-2">Voir le profil</button>
+      </div>
+      <div class="col me-5" style="background: linear-gradient(180deg, #70D6FF 0%, rgba(112, 214, 255, 0.00) 100%);">
+          <img src="../../../assets/me2.png" class="card-img-top  ps-5 pt-5" alt="..." style="width: 18rem;">
+          <p class="col mt-4">Alex est un menuisier passionné. Création de meubles sur mesure,
+            spécialité dans l'artisanat unique.</p>
+          <button  routerLink="/profil" class="btn btn-outline-primary mt-5 btn-lg me-2">Voir le profil</button>
+
+      </div>
+      <div class="col me-5"  style="background: linear-gradient(180deg, #70D6FF 0%, rgba(112, 214, 255, 0.00) 100%);">
+
+          <img src="../../../assets/me3.png" class="card-img-top  ps-5 pt-5" alt="..." style="width: 18rem;">
+          <p class="col mt-4">Eric Amani ,menuisière polyvalent. Création, réparation, dépannage. Qualité assurée.</p>
+          <button routerLink="/profil" class="btn btn-outline-primary mt-5 btn-lg me-2">Voir le profil</button>
+
+
+      </div>
+  </div>
+
+  <p class="float-end fs-5 mt-5 fw-bold">voir plus <img src="../../../assets/arrow.png" alt="..." ></p>
+</div>-->
+<div class="container text-center fs-2 mt-5 fw-bold border-top "><h1 class="top-50">Réparer ses objets n'a jamais été aussi facile</h1></div>
+<div class="container text-center fs-2 mt-5"><button routerLink="/signupPrestataire" class="btn light-blue mt-3 accent-2 waves-effect waves-light mb-5 ">Devenir prestataire</button></div>
+

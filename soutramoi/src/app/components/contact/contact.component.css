@@ -1,0 +1,10 @@
+/*.ng-valid[required]{
+
+  border-bottom: 2px solid #42A948;
+}
+
+.ng-invalid:not(form){
+
+  border-bottom: 1px solid red;
+}*/
+.top-50{margin-top: 50px;}

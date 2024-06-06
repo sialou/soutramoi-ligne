@@ -1,0 +1,92 @@
+<div class="col-6 col-md-3 offset-md-4 mb-5 top-50">
+  <p class="text-center fs-3">Créer un compte</p>
+
+    <form *ngIf="!formSubmitted" [formGroup]="signupPrestataireForm" (ngSubmit)="onSubmit()">
+
+      <div class="col-12  mb-3">
+        <label for="InputLastname" class="form-label">Nom et Prénom</label>
+        <input type="text" class="form-control" id="InputLastname" formControlName="name"  >
+        <div *ngIf="signupPrestataireForm.get('name')?.invalid && signupPrestataireForm.get('name')?.touched">
+          Votre nom est requis
+        </div>
+      </div>
+
+      <div class="input-field  col-12  mb-3">
+        <select #select1 required formControlName="service">
+          <option value="" disabled selected>Service</option>
+          <option value="electricite">Electricité</option>
+          <option value="plomberie">Plomberie</option>
+          <option value="menuiserie">Menuiserie</option>
+          <option value="froid">Froid</option>
+          <option value="nettoyage_de_fin_de_chantier">Nettoyage de fin de chantier</option>
+          <option value="blanchisserie">Blanchisserie</option>
+          <option value="jardinage">Jardinage</option>
+          <option value="peintre">Peintre</option>
+
+        </select>
+        <div *ngIf="signupPrestataireForm.get('service')?.invalid && signupPrestataireForm.get('service')?.touched">
+          Le service est requis
+        </div>
+      </div>
+      <div class="col-12  mb-3">
+        <label for="InputExperience" class="form-label"> Nombre d'année d'expérience</label>
+        <input type="number" class="form-control" id="InputExperience" formControlName="experience"  >
+        <div *ngIf="signupPrestataireForm.get('experience')?.invalid && signupPrestataireForm.get('experience')?.touched">
+          Votre nombre d'année d'experience est requis
+        </div>
+      </div>
+      <div class="col-12  mb-3">
+        <label for="InputVille" class="form-label">Ville</label>
+        <input type="text" class="form-control" id="InputVille" formControlName="ville">
+        <div *ngIf="signupPrestataireForm.get('ville')?.invalid && signupPrestataireForm.get('ville')?.touched">
+          Votre ville est requis
+        </div>
+      </div>
+      <div class="col-12  mb-3">
+        <label for="InputCommune" class="form-label">Commune</label>
+        <input type="text" class="form-control" id="InputCommune" formControlName="commune"  required>
+        <div *ngIf="signupPrestataireForm.get('commune')?.invalid && signupPrestataireForm.get('commune')?.touched">
+          Votre Commune est requis
+        </div>
+      </div>
+
+      <div class="col-12  mb-3">
+        <label for="InputTelephone" class="form-label">Téléphone whatsapp</label>
+        <input type="text" class="form-control" id="InputTelephone"  formControlName="tel"  required>
+        <div *ngIf="signupPrestataireForm.get('tel')?.invalid && signupPrestataireForm.get('tel')?.touched">
+          Votre Téléphone est requis
+        </div>
+      </div>
+      <!--<div class="col-12  mb-3">
+        <label for="InputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="InputEmail1" formControlName="email" aria-describedby="emailHelp" required>
+
+      </div>
+      <div class="col-12 mb-3">
+        <label for="InputPassword1" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control"  formControlName="password" id="InputPassword1" required>
+      </div>
+
+      <div class="col-12 mb-3">
+        <label for="InputPassword1" class="form-label">Retaper le mot de Passe</label>
+        <input type="password" class="form-control"  formControlName="password2" id="InputPassword1" required>
+      </div>-->
+      <div class="col-12 mb-5  form-check">
+
+        <label ><input type="checkbox" formControlName="condition"/><span>J’accepte les <a routerLink="/conditions">termes et conditions</a></span></label>
+
+      </div>
+
+      <div class="d-grid gap-2 col-6 mx-auto">
+         <button type="submit" class="btn light-blue accent-2 waves-effect waves-light">S'inscrire</button>
+      </div>
+    </form>
+    <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
+      <span class="blue-text text-darken-2"> Profil inscrit, nous vous reviendrons sou peu pour la validation.</span>
+    </div>
+    <!--<p class="text-center fs-5 top-50"> Avez-vous dejà un compte? <a routerLink="/signin">Connexion</a></p>-->
+
+  <!--<div class="col s5 pull-s7"> <img src="image1.jpg" class="responsive-img" alt="Image 1"></div>-->
+</div>
+
+

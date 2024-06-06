@@ -1,0 +1,64 @@
+<div class="container-fluid text-white bg-black">
+  <footer class="py-5 container">
+    <div class="row">
+      <div class="col-6 col-md-3 mb-3">
+        <h3>Nos services</h3>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a routerLink="/plombierie" class="nav-link p-0 text-white">Plomberie</a></li>
+          <li class="nav-item mb-2"><a routerLink="/menuiserie" class="nav-link p-0 text-white">Menuiserie</a></li>
+          <!--<li class="nav-item mb-2"><a routerLink="/" class="nav-link p-0 text-white">Carrelage</a></li>-->
+          <li class="nav-item mb-2"><a routerLink="/electricite" class="nav-link p-0 text-white">Electricité</a></li>
+          <li class="nav-item mb-2"><a routerLink="/peintre" class="nav-link p-0 text-white">Peintre</a></li>
+          <li class="nav-item mb-2"><a routerLink="/jardinage" class="nav-link p-0 text-white">Jardinage</a></li>
+          <li class="nav-item mb-2"><a routerLink="/froid" class="nav-link p-0 text-white">Froid</a></li>
+          <li class="nav-item mb-2"><a routerLink="/blanchisserie" class="nav-link p-0 text-white">Blanchisserie</a></li>
+          <li class="nav-item mb-2"><a routerLink="/lavage" class="nav-link p-0 text-white">Lavage auto et tapis</a></li>
+          <li class="nav-item mb-2"><a routerLink="/nettoyage" class="nav-link p-0 text-white">Nettoyage de fin de chantier</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-3 mb-3">
+        <h3>Soutramoi</h3>
+        <ul class="nav flex-column">
+
+          <li class="nav-item mb-2"><a routerLink="/" class="nav-link p-0 text-white">Accueil</a></li>
+          <li class="nav-item mb-2"><a routerLink="/abonnement" class="nav-link p-0 text-white">Abonnement</a></li>
+          <li class="nav-item mb-2"><a routerLink="/signup" class="nav-link p-0 text-white">Inscription</a></li>
+          <li class="nav-item mb-2"><a routerLink="/signin" class="nav-link p-0 text-white">Connexion</a></li>
+          <li class="nav-item mb-2"><a routerLink="/propos" class="nav-link p-0 text-white">A propos de nous</a></li>
+          <li class="nav-item mb-2"><a routerLink="/contact" class="nav-link p-0 text-white">Contacts</a></li>
+          <li class="nav-item mb-2"><a routerLink="/conditions" class="nav-link p-0 text-white">Condition d'utilisation</a></li>
+          <li class="nav-item mb-2"><a routerLink="faq" class="nav-link p-0 text-white">Faq</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-5 offset-md-1 mb-3">
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/soutramoi2"> <i class="fab fa-facebook white-icon fa-lg" style="font-size: 30px;"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="https://www.linkedin.com/company/soutramoi"> <i class="fab fa-linkedin white-icon fa-lg" style="font-size: 30px;"></i></a></li>
+
+        </ul>
+        <form *ngIf="!formSubmitted" [formGroup]="newsletterForm" (ngSubmit)="onSubmit()">
+          <h3>Inscrivez vous à notre newsletter pour rester à jour!</h3>
+
+          <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">Votre email</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="Votre email" formControlName="email" >
+            <div *ngIf="newsletterForm.get('email')?.invalid && newsletterForm.get('email')?.touched">
+              Votre email est requis
+            </div>
+            <button class="btn light-blue accent-2" type="submit">s’abonner</button>
+          </div>
+        </form>
+        <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
+          <span class="blue-text text-darken-2"> Merci pour votre inscription</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+      <p>&copy; 2024 SOUTRAMOI. Tous droits réservés..</p>
+
+    </div>
+  </footer>
+</div>

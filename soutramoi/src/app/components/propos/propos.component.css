@@ -1,0 +1,47 @@
+.top-50{margin-top: 50px;}
+.top-20{margin-top: 20px;}
+
+
+/* slider.component.css */
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+  height: auto; /* Ajustez la hauteur en fonction de la largeur pour maintenir les proportions de l'image */
+}

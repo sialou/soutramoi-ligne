@@ -1,0 +1,329 @@
+<div>
+  <div class="container-fluid " style="background: linear-gradient(180deg, #58c5f0 0%, rgba(112, 214, 255, 0.00) 100%);  ">
+      <div class="row">
+        <div class="col-md-8 one top-50">
+          <h1 class=" fw-bold  text-center  "  ><span style="color:#fff">Quand y'a   drap </span>on te soutra!!!</h1>
+          <p class="top-50 fw-bold text-center" style="font-size: large; letter-spacing: 2px;">Chaque ménage mérite de confier ses travaux à un professionnel de métier fiable et qualifié.</p>
+          <p class="top-50 fw-bold text-center" style="font-size: large; letter-spacing: 2px;">Trouver le professionnel le plus proche de vous et à moindre coût.</p>
+          <div class="input-field col s8" style="margin-top: 50px;">
+           <!-- <i class="material-icons prefix ">search</i>
+            <input type="text" id="autocomplete-input" class="autocomplete">
+            <label for="autocomplete-input" class="textrecherche">De quel service avez-vous besoin ?</label>-->
+
+          </div>
+          <!--<p class="  fs-4 text-start  col-6 offset-lg-3" style="margin-top: -50px;">Chaque ménage mérite de confier ses travaux à un professionnel de métier fiable et qualifié.</p>-->
+        </div>
+        <div class="col-md-4">
+          <img src="../../../assets/1.jpeg"  style="width: 100%;float: inline-end;;margin-top:10px; margin-right:5%;display: flex;" alt="Your Image" class=" float-end rounded-pill">
+
+
+          <!-- <img src="../../../assets/famille.png"  style="width: 50%;float: inline-end;;margin-top:-400px; margin-right:10%;display: flex;" alt="Your Image" class=" float-right rounded-pill">-->
+        </div>
+  </div>
+  </div>
+
+  <!--<div class="d-flex justify-content-center ">
+    <div class="chip"> <i class="fa fa-phone " ></i>  Service client 7j/7</div>
+    <div class="chip"><i class="fa fa-user " ></i>  Prestation encadrés et profil vérifiés</div>
+      <div class="chip"><i class="fa fa-star"></i> Client satisfait </div>
+
+  </div>-->
+  <!--<input #input (keyup)="selectService(input.value)" type="number"/>--><!--a chaque fois qu'il va taper -->
+  <!--<input #input (keyup.enter)="selectService(input.value)" type="number"/>--><!--a chaque fois qu'il va taper et appuyer la touche entree -->
+ <!-- <p>Trouvez le prestataire idéal pour tous vos problèmes du quotidien en toute sécurité.</p>
+<p *ngIf="serviceSelected">Vous avez selectionné le service {{ serviceSelected.name }}</p>
+<p *ngIf="!serviceSelected">Aucun service n'a été trouver</p>
+<div *ngFor="let service of serviceListe">
+  {{service.name}}
+<a (click)="goMyservice(service)"> click</a>
+<a (click)="deleteService(service)"> supprimmer</a>
+</div>-->
+
+<!--<li
+*ngFor="let job of jobs"
+class="list-group-item">
+{{ job.id }}
+</li>-->
+  <div class="container top-50">
+      <div class="row offset-md-1">
+
+        <div class="ms-3" style="width: 18rem;"><a routerLink="/electricite">
+          <img src="../../../assets/acceuil2.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Electricité</p>
+          </div></a>
+      </div>
+
+          <div class="ms-3" style="width: 18rem;"><a routerLink="/plombierie">
+              <img src="../../../assets/acceuil5.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Plomberie</p>
+              </div></a>
+          </div>
+          <div class="ms-3" style="width: 18rem;" >
+            <a routerLink="/menuiserie">
+
+              <img src="../../../assets/m1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Menuiserie</p>
+              </div></a>
+
+          </div>
+      </div>
+      <div class="row offset-md-1">
+         <div class="ms-3" style="width: 18rem;"><a routerLink="/froid">
+              <img src="../../../assets/acceuil4.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Froid</p>
+              </div></a>
+          </div>
+          <div class="ms-3" style="width: 18rem;"><a routerLink="/lavage">
+              <img src="../../../assets/acceuil5.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Lavage auto et tapis</p>
+              </div></a>
+          </div>
+          <div class="ms-3" style="width: 18rem;"><a routerLink="/nettoyage">
+              <img src="../../../assets/acceuil1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Nettoyage de fin de chantier</p>
+              </div></a>
+          </div>
+      </div>
+      <div class="row offset-md-1">
+          <div class="ms-3" style="width: 18rem;"><a routerLink="/blanchisserie">
+              <img src="../../../assets/acceuil6.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Blanchisserie</p>
+              </div></a>
+          </div>
+          <div class="ms-3" style="width: 18rem;"><a routerLink="/jardinage">
+              <img src="../../../assets/acceuil7.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Jardinage</p>
+              </div></a>
+          </div>
+          <div class="ms-3" style="width: 18rem;"><a routerLink="/peintre">
+              <img src="../../../assets/acceuil6.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-text">Peintre</p>
+              </div></a>
+          </div>
+      </div>
+  </div>
+  <!--<div class="container-sm" style="background: linear-gradient(to bottom, #3498db, #fff);padding: 20px;">
+          <p class="fs-2">Des prestataires qualifiés pour votre satisfaction</p>
+          <p class="fs-5">Faites nous confiance et tentez l’aventure comme ces +500 personnes <br>
+            qui aujourd’hui profite de leur temps libre en toute tranquilité.</p>
+          <div class="row">
+            <p class="col fs-4">+500 travaux <br>
+              réalisés par nos <br>
+              prestataires </p>
+
+              <p class="col fs-4">+150 prestataires <br>
+                actifs</p>
+
+              <p class="col fs-4">3.8 / 5 <br>
+                note moyennes <br>
+                des prestataires</p>
+          </div>
+  </div>-->
+
+  <section class="counter-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="counter-count">
+            <span class="count">+150</span>
+            <h3 class="title">Prestataires</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="counter-count">
+            <span class="count">+500 </span>
+            <h3 class="title">Travaux</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="counter-count">
+            <span class="count">2</span>
+            <h3 class="title">Villes</h3>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="counter-count">
+            <span class="count">3.8 / 5</span>
+            <h3 class="title"> Note moyennes des prestataires</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <p class="fs-2 mt-5 top-50">Comment ça marche ?</p>
+
+  <div class="container-fluid">
+    <div class="row example-basic">
+
+        <div class=" offset-xs-1 col-xs-10  offset-sm-3 col-sm-6 ">
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>Recherche du service et réservation  </span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+
+                        <p>L'utilisateur se connecte à la plateforme Soutramoi.
+                          Il navigue à travers les différents services proposés pour trouver celui dont il a besoin.
+                          Une fois le service trouvé, l'utilisateur remplit un formulaire de réservation avec les détails spécifiques de son besoin.
+                          Il soumet ensuite sa demande de réservation à travers la plateforme.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>Traitement de la demande</span>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+
+                        <p>L'équipe de Soutramoi reçoit la demande de réservation.
+                          Ils vérifient les détails fournis par l'utilisateur pour s'assurer de leur précision.
+                          Ensuite, l'équipe recherche et contacte un dépanneur qualifié et fiable qui correspond aux besoins de l'utilisateur et qui est situé à proximité de lui.
+                          Une fois le dépanneur trouvé et confirmé, l'équipe de Soutramoi communique les détails de la réservation à l'utilisateur, y compris la date et l'heure du rendez-vous. </p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-info">
+                      <span>Intervention du dépanneur</span>
+                  </div>
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+
+                      <p>Le dépanneur se rend au domicile de l'utilisateur à la date et à l'heure convenues.
+                        Il effectue le travail demandé avec professionnalisme et efficacité.
+                        Une fois le travail terminé, l'utilisateur paie le dépanneur selon les modalités convenues lors de la réservation.
+                        Enfin, l'utilisateur a la possibilité de laisser un avis et un commentaire sur le dépanneur et sur son expérience globale avec Soutramoi.</p>
+                  </div>
+              </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+  <!--<p class="fs-2 mt-5">Besoin d’astuce rapide et utile?</p>
+      <div class="row ">
+        <div class="col s4" >
+          <img src="../../../assets/at1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><span class="fs-4">Comment déboucher un évier ?</span><br/>
+
+              Utilisez des ampoules LED à faible consommation d'énergie.
+              Isoler les portes et les fenêtres pour éviter les pertes de chaleur.</p>
+          </div>
+      </div>
+      <div class="col s4" >
+          <img src="../../../assets/at2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><span class="fs-4">Comment économiser de l’energie ?</span><br/>
+              Utilisez des ampoules LED à faible consommation d'énergie.
+              Isoler les portes et les fenêtres pour éviter les pertes de chaleur.
+            </p>
+          </div>
+      </div>
+      <div class="col s4" >
+          <img src="../../../assets/at3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text"><span class="fs-4">Comment entretenir son jardin ?</span><br/>
+
+              Choisissez des plantes adaptées à votre climat pour faciliter l'entretien.
+              Utilisez du paillis pour réduire les mauvaises herbes et conserver l'humidité. Installez un système d'arrosage automatique pour</p>
+          </div>
+      </div>
+
+
+</div>-->
+<!--<div class="col-sm-8  offset-sm-2 text-center  mb-sm-5 text-black border-bottom text-uppercase ">
+  <h2>Découvrez Nos Travaux Accomplis </h2>
+</div>
+
+<ngb-carousel *ngIf="images.length > 0">
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let image of images.slice(0, 3)">
+
+        <img [src]="image.url" alt="Image" class="img-fluid">
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let image of images.slice(3, 6)">
+
+        <img [src]="image.url" alt="Image" class="img-fluid">
+      </div>
+    </div>
+  </ng-template>
+
+</ngb-carousel>-->
+
+<div class="col-sm-8  offset-sm-2 text-center  mb-sm-5 text-black border-bottom text-uppercase ">
+  <h2>Témoignages de Nos Clients</h2>
+</div>
+
+<ngb-carousel *ngIf="testimonials.length > 0" class="col-sm-8  offset-sm-2 bottom-50" >
+  <ng-template ngbSlide>
+    <div class="testimonials">
+      <div class="testimonial" *ngFor="let testimonial of testimonials.slice(0, 3)">
+        <!-- Testimonial content for the first slide -->
+
+          <p>  {{ testimonial.text }}  <span class="testimonal-author">{{ testimonial.author }}</span></p>
+
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template ngbSlide>
+    <div class="testimonials">
+      <div class="testimonial" *ngFor="let testimonial of testimonials.slice(3, 6)">
+        <!-- Testimonial content for the second slide -->
+        <p>  {{ testimonial.text }}  <span class="testimonal-author">{{ testimonial.author }}</span></p>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Add more ngbSlide templates as needed -->
+</ngb-carousel>
+
+<input class='chat-menu hidden' id='offchat-menu' type='checkbox' />
+<div class='sticky-button' id='sticky-button'>
+  <label for='offchat-menu'>
+    <svg class='svg-1' viewBox='0 0 32 32'><path d='M16,3A13,13,0,0,0,4.53,22.13L3,27.74a1,1,0,0,0,.27,1A1,1,0,0,0,4,29a.84.84,0,0,0,.27,0l5.91-1.65a1,1,0,0,0-.53-1.93L5.42,26.56l1.15-4.3a1,1,0,0,0-.1-.76A11,11,0,1,1,16,27a11.23,11.23,0,0,1-1.84-.15,1,1,0,0,0-1.15.82,1,1,0,0,0,.82,1.15A13,13,0,1,0,16,3Z'></path><path d='M15,11.21l-1.16-1.6a2.06,2.06,0,0,0-1.5-.84,2.08,2.08,0,0,0-1.62.6l-1.2,1.2a2.81,2.81,0,0,0-.8,2.08c0,1.77,1.36,4,4,6.6,3.09,3,5.23,4,6.69,4a2.7,2.7,0,0,0,2-.81l1.2-1.2a2,2,0,0,0-.24-3.11L20.8,17a2.09,2.09,0,0,0-1.83-.3l-1.49.47a.53.53,0,0,1-.26-.09,11.42,11.42,0,0,1-2.35-2.26.31.31,0,0,1,0-.11c.13-.44.35-1.15.5-1.64A2,2,0,0,0,15,11.21Zm1.29,7.63a2.33,2.33,0,0,0,1.75.2l1.54-.46,1.61,1.25L20,21c-.48.47-2.25.33-5.86-3.21-3-2.91-3.41-4.5-3.41-5.18A.89.89,0,0,1,11,12l1.28-1.19,1.18,1.65c-.16.49-.39,1.22-.51,1.65A2.12,2.12,0,0,0,13,15.51,11.24,11.24,0,0,0,16.33,18.84Z'></path></svg>
+    <svg class='svg-2' viewbox='0 0 512 512'>
+      <path d='M278.6 256l68.2-68.2c6.2-6.2 6.2-16.4 0-22.6-6.2-6.2-16.4-6.2-22.6 0L256 233.4l-68.2-68.2c-6.2-6.2-16.4-6.2-22.6 0-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3l68.2 68.2-68.2 68.2c-3.1 3.1-4.7 7.2-4.7 11.3 0 4.1 1.6 8.2 4.7 11.3 6.2 6.2 16.4 6.2 22.6 0l68.2-68.2 68.2 68.2c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L278.6 256z'></path>
+    </svg>
+  </label>
+</div>
+<div class='sticky-chat'>
+  <div class='chat-content'>
+    <div class='chat-header'>
+      <svg viewbox='0 0 32 32'><path d='M24,22a1,1,0,0,1-.64-.23L18.84,18H17A8,8,0,0,1,17,2h6a8,8,0,0,1,2,15.74V21a1,1,0,0,1-.58.91A1,1,0,0,1,24,22ZM17,4a6,6,0,0,0,0,12h2.2a1,1,0,0,1,.64.23L23,18.86V16.92a1,1,0,0,1,.86-1A6,6,0,0,0,23,4Z'></path><rect height='2' width='2' x='19' y='9'></rect><rect height='2' width='2' x='14' y='9'></rect><rect height='2' width='2' x='24' y='9'></rect><path d='M8,30a1,1,0,0,1-.42-.09A1,1,0,0,1,7,29V25.74a8,8,0,0,1-1.28-15,1,1,0,1,1,.82,1.82,6,6,0,0,0,1.6,11.4,1,1,0,0,1,.86,1v1.94l3.16-2.63A1,1,0,0,1,12.8,24H15a5.94,5.94,0,0,0,4.29-1.82,1,1,0,0,1,1.44,1.4A8,8,0,0,1,15,26H13.16L8.64,29.77A1,1,0,0,1,8,30Z'></path></svg>
+      <div class='title'>Veuillez discuter avec notre équipe<span>Notre conseiller client vous répondra dans les minutes qui suivent</span></div>
+    </div>
+    <div class='chat-text'>
+      <span>Hello, Comment pouvons-nous vous aider ?</span>
+      <span class='typing'><svg viewbox='0 0 512 512'><circle cx='256' cy='256' r='48'></circle><circle cx='416' cy='256' r='48'></circle><circle cx='96' cy='256' r='48'></circle></svg></span>
+    </div>
+  </div>
+  <a class='chat-button' (click)="openWhatsAppChat()" rel='nofollow noreferrer' target='_blank'>
+    <span>Discuter avec Mr Attiah Herman...</span>
+    <svg viewBox='0 0 32 32'><path class='cls-1' d='M19.47,31a2,2,0,0,1-1.8-1.09l-4-7.57a1,1,0,0,1,1.77-.93l4,7.57L29,3.06,3,12.49l9.8,5.26,8.32-8.32a1,1,0,0,1,1.42,1.42l-8.85,8.84a1,1,0,0,1-1.17.18L2.09,14.33a2,2,0,0,1,.25-3.72L28.25,1.13a2,2,0,0,1,2.62,2.62L21.39,29.66A2,2,0,0,1,19.61,31Z'></path></svg>
+  </a>
+</div>
+
+</div>
+

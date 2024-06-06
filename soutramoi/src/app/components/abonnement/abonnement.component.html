@@ -1,0 +1,161 @@
+
+<div class="container py-3 top-50">
+  <!--<header>
+
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
+      <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+    </div>
+  </header>-->
+  <p class="text-center fs-4">Choississez votre type d'abonnement pour ce service</p>
+
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center top-50">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Starter</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Fcfa 10 000<small class="text-body-secondary fw-light">/1mois</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Accès à nos services  24/7</li>
+              <li>Email support</li>
+              <li>Service de rappel</li>
+              <li></li>
+              <li></li>
+            </ul>
+            <!--<button type="button" routerLink="/paiement-abonnement" class="w-100 btn btn-lg light-blue accent-2">S'abonner</button>-->
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Pro</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Fcfa 25 000<small class="text-body-secondary fw-light">/3 mois</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Accès à nos services  24/7</li>
+              <li>Email support</li>
+              <li>Service de rappel</li>
+              <li>Service de consultation à distance</li>
+
+            </ul>
+            <!--<button type="button" routerLink="/paiement-abonnement" class="w-100 btn btn-lg light-blue accent-2">S'abonner</button>-->
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Enterprise</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Fcfa 90 000<small class="text-body-secondary fw-light">/12 mois</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Accès à nos services  24/7</li>
+              <li>Email support</li>
+              <li>Service de rappel</li>
+              <li>Service de consultation à distance</li>
+              <li>Conseils personnalisés</li>
+            </ul>
+            <!--<button type="button" routerLink="/paiement-abonnement" class="w-100 btn btn-lg light-blue accent-2">S'abonner</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div class="col-6 col-md-3 offset-md-4 mb-5 top-50">
+  <p class="text-center fs-3">Soucrivez ici</p>
+
+  <form *ngIf="!formSubmitted" [formGroup]="abonnementForm" (ngSubmit)="onSubmit()">
+    <div class="col-12  mb-3 top-50">
+      <label for="InputLastname" class="form-label">Nom et Prénom</label>
+      <input type="text" class="form-control" id="InputLastname" formControlName="name" aria-describedby="emailHelp" >
+      <div *ngIf="abonnementForm.get('name')?.invalid && abonnementForm.get('name')?.touched">
+        Votre nom est requis
+      </div>
+    </div>
+    <div class="col-12  mb-3">
+      <label for="InputTelephone" class="form-label">Téléphone</label>
+      <input type="text" class="form-control" id="InputTelephone"  formControlName="tel" aria-describedby="emailHelp" >
+      <div *ngIf="abonnementForm.get('tel')?.invalid && abonnementForm.get('tel')?.touched">
+        Votre téléphone est requis
+      </div>
+    </div>
+    <div class="input-field  col-12  mb-3">
+      <select #select1 required formControlName="type_abonnement">
+        <option value="" disabled selected>Choisissez le Type d'abonnement</option>
+        <option value="starter">Starter</option>
+        <option value="pro">Pro</option>
+        <option value="enterprise">Enterprise</option>
+      </select>
+      <div *ngIf="abonnementForm.get('type_abonnement')?.invalid && abonnementForm.get('type_abonnement')?.touched">
+        Votre email est requis
+      </div>
+    </div>
+   <!-- <input type="hidden" formControlName="user_id" [value]="123">
+    <input type="hidden" formControlName="job_id" [value]="123">-->
+
+   <div class="input-field col-12  mb-3">
+      <select multiple #select2 required formControlName="service">
+        <option value="" disabled selected>Choisissez le(s) Services  </option>
+        <option value="froid">Froid</option>
+        <option value="jardinage">Jardinage</option>
+        <option value="blanchisserie">Blanchisserie</option>
+      </select>
+      <div *ngIf="abonnementForm.get('service')?.invalid && abonnementForm.get('service')?.touched">
+        Votre email est requis
+      </div>
+
+    </div>
+    <!--<div class="input-field col-12  mb-3">
+      <select #select2 required formControlName="service">
+        <option value="" disabled selected>Choisissez le(s) Services  </option>
+        <option value="1">Froid</option>
+        <option value="2">Jardinage</option>
+        <option value="3">Blanchisserie</option>
+      </select>
+
+    </div>-->
+
+
+
+    <!--<div class="col-12  mb-3">
+      <label for="InputVille" class="form-label">Ville</label>
+      <input type="text" class="form-control" id="InputVille" aria-describedby="emailHelp">
+    </div>
+    <div class="col-12  mb-3">
+      <label for="InputCommune" class="form-label">Commune</label>
+      <input type="text" class="form-control" id="InputCommune" aria-describedby="emailHelp">
+    </div>
+
+    <div class="col-12  mb-3">
+      <label for="InputTelephone" class="form-label">Téléphone</label>
+      <input type="text" class="form-control" id="InputTelephone" aria-describedby="emailHelp">
+    </div>
+    <div class="col-12  mb-3">
+      <label for="InputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+
+    </div>-->
+
+    <div class="col-12  mb-5  form-check">
+
+      <label ><input type="checkbox"  required/><span>J’accepte les <a routerLink="/conditions">termes et conditions</a></span></label>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+       <button type="submit" class="btn light-blue accent-2 waves-effect waves-light">S'abonner</button>
+    </div>
+  </form>
+  <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
+    <span class="blue-text text-darken-2"> Demande d'abonnement envoyée</span>
+  </div>
+
+
+  </div>
+
