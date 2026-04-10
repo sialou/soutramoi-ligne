@@ -112,7 +112,7 @@ export class AbonnementComponent  {
   sAbonner() { this.whatsapp.abonnement(); }
 
   features = [
-    { title: '1 nettoyages complets',    desc: 'Filtres, bac à eau, unité intérieure et extérieure.' },
+    { title: '1 nettoyage complet',    desc: 'Filtres, bac à eau, unité intérieure et extérieure.' },
     { title: '1 Contrôle rapide inclus',  desc: '30 min pour vérifier que tout va bien.' },
    /* { title: 'Technicien dédié fixe',           desc: 'Un technicien attitré qui connaît votre installation.' },*/
     { title: 'Intervention garantie sous 24h',  desc: 'Panne urgente ? On envoie quelqu\'un rapidement.' },
