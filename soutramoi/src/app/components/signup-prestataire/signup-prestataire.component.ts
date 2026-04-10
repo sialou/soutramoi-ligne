@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import emailjs from '@emailjs/browser';
+import { WhatsappService } from '../shared/Whatsapp.service';
 
 declare var M: any;
 @Component({
@@ -27,7 +28,7 @@ export class SignupPrestataireComponent {
   formSubmitted: boolean = false;
   formInvalid: boolean = false;
 
-  constructor(private http: HttpClient, private datePipe: DatePipe, private fb: FormBuilder){ }
+  constructor(private http: HttpClient, private datePipe: DatePipe, private fb: FormBuilder, private whatsapp: WhatsappService){ }
   @ViewChild('select1', {static: false}) select1Element: ElementRef;
   ngAfterViewInit() {
     this.initializeSelect();
@@ -78,4 +79,43 @@ export class SignupPrestataireComponent {
     }
   }
 
+  rejoindre() { this.whatsapp.prestataire(); }
+
+  stats = [
+    { num: '+150', lbl: 'Prestataires actifs' },
+    { num: '+500', lbl: 'Missions réalisées' },
+    { num: '< 2h', lbl: 'Délai de réponse' },
+    { num: '24h', lbl: 'Paiement après mission' },
+  ];
+
+  avantages = [
+    { icon: '📲', title: 'Clients livrés sur WhatsApp', desc: 'Vous recevez les demandes clients directement sur votre téléphone. Pas de plateforme compliquée à gérer.' },
+    { icon: '💰', title: 'Payé rapidement', desc: 'Votre paiement Mobile Money est envoyé dans les 2h après validation de la mission par le client.' },
+    { icon: '✅', title: 'Badge Pro Vérifié', desc: 'Soutramoi vérifie vos compétences et vous attribue un badge. Les clients font confiance aux pros certifiés.' },
+    { icon: '📈', title: 'Gagnez plus de clients', desc: 'Plus vous intervenez vite et bien, plus vous remontez dans les recommandations Soutramoi.' },
+    { icon: '🔒', title: 'Paiement sécurisé garanti', desc: 'Le client paie avant votre déplacement. Vous ne travaillez jamais pour rien.' },
+    { icon: '🤝', title: 'Support de l\'équipe Soutramoi', desc: 'Notre équipe est disponible sur WhatsApp pour vous aider en cas de litige ou de question.' },
+  ];
+
+  metiers = [
+    { icon: '❄️', nom: 'Technicien climatisation' },
+    { icon: '🔧', nom: 'Plombier' },
+    { icon: '⚡', nom: 'Électricien' },
+    { icon: '🎨', nom: 'Peintre' },
+    { icon: '🪚', nom: 'Menuisier' },
+    { icon: '🌿', nom: 'Jardinier' },
+    { icon: '👕', nom: 'Blanchisserie' },
+    { icon: '🧹', nom: 'Agent de nettoyage' },
+    { icon: '🏗️', nom: 'Maçon' },
+    { icon: '🔑', nom: 'Serrurier' },
+    { icon: '📺', nom: 'Technicien électroménager' },
+    { icon: '🚿', nom: 'Carreleur' },
+  ];
+
+  process = [
+    { icon: '📝', title: 'Vous postulez sur WhatsApp', desc: 'Envoyez votre métier, votre expérience et votre quartier. On répond sous 24h.' },
+    { icon: '✅', title: 'On vérifie vos compétences', desc: 'Échange rapide pour confirmer votre expertise. Pas de tests compliqués.' },
+    { icon: '📲', title: 'Vous recevez des demandes', desc: 'Dès votre validation, les demandes de clients arrivent sur votre WhatsApp.' },
+    { icon: '💸', title: 'Vous êtes payé après chaque mission', desc: 'Mobile Money dans les 2h après confirmation du client. Simple et fiable.' },
+  ];
 }

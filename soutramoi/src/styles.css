@@ -7,3 +7,117 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --blue: #0EA5E9;
+  --blue-dark: #0369A1;
+  --blue-light: #BAE6FD;
+  --blue-bg: #F0F9FF;
+  --green: #22C55E;
+  --green-dark: #15803D;
+  --orange: #F97316;
+  --yellow: #FDE68A;
+  --text: #0F172A;
+  --text-2: #475569;
+  --text-3: #94A3B8;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(14,165,233,.10);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: #fff;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; }
+
+a { text-decoration: none; color: inherit; }
+
+.section-tag {
+  display: inline-block;
+  background: var(--blue-bg);
+  color: var(--blue-dark);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: 5px 12px;
+  border-radius: 99px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.section-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+.section-head { margin-bottom: 44px; }
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #25D366;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+  box-shadow: 0 4px 20px rgba(37,211,102,.35);
+}
+.btn-wa:hover { background: #128C7E; transform: translateY(-1px); }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: .2s;
+}
+.btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--blue-dark);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 13px 24px;
+  border-radius: 99px;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  transition: .2s;
+}
+.btn-outline:hover { background: var(--blue-bg); }
+
+.page-wrapper {
+  padding-top: 70px;
+}

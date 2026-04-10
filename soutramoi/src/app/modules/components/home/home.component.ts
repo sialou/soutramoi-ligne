@@ -5,7 +5,7 @@ import { Service } from 'src/app/models/service';
 import { ServicesService } from 'src/app/services/service.service';
 /*import { SERVICES } from './service-liste';
 import { Service } from './service';*/
-import { SERVICES } from 'src/app/modules/service-liste';
+//import { SERVICES } from 'src/app/modules/service-liste';
 import { ServiceC } from 'src/app/modules/service';
 import { JobsService } from 'src/app/services/jobs.service';
 //import { SERVICES } from 'src/app/service-liste';
@@ -13,6 +13,7 @@ import { JobsService } from 'src/app/services/jobs.service';
 //import { BorderCardDirective } from 'src/app/border-card.directive';
 import { Router } from '@angular/router';
 import { Jobs } from 'src/app/models/jobs';
+import { WhatsappService } from 'src/app/components/shared/Whatsapp.service';
 
 
 interface Testimonial {
@@ -26,10 +27,10 @@ interface Testimonial {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy  {
-  serviceListe: ServiceC[] =SERVICES;
+  //serviceListe: ServiceC[] =SERVICES;
   serviceList: ServiceC[];
   serviceSelected: ServiceC|undefined;
-  services: Service[]=[]
+  //services: Service[]=[]
   data: Number | undefined
   myvardata: Subscription|undefined
   jobs:Array<Jobs>=[];
@@ -42,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy  {
     { id: 6, url: '../../../assets/orange_corners.jpg' },
     // Add more image objects as needed
   ];
-  constructor(private serviceService: ServicesService, private router:Router,private job:JobsService ){
+  constructor(private serviceService: ServicesService, private router:Router,private job:JobsService,private whatsapp: WhatsappService ){
 
   }
 
@@ -146,7 +147,7 @@ export class HomeComponent implements OnInit, OnDestroy  {
     }
 
     //selectService(service: Service){
-      selectService(serviceId: string){
+      /*selectService(serviceId: string){
         //const id =+serviceId
         const service: ServiceC|undefined =this.serviceListe.find(service => service.id == +serviceId)
         if(service)
@@ -158,7 +159,7 @@ export class HomeComponent implements OnInit, OnDestroy  {
           this.serviceSelected=service;
         }
 
-    }
+    }*/
 
 deleteService(service: ServiceC){
 
@@ -172,16 +173,45 @@ goAccueil(){
 
 }
 
-goMyservice(service: ServiceC){
-      this.router.navigate(['/menuiserie', service.id])
 
-  }
 
-  whatsappNumber = '+2250757994846'; // Replace with your WhatsApp number
+  demanderService() { this.whatsapp.open('Bonjour Soutramoi, j\'ai besoin d\'un service à domicile.'); }
+  sAbonner()        { this.whatsapp.abonnement(); }
+  waService(nom: string) { this.whatsapp.service(nom); }
 
-  openWhatsAppChat() {
-    const whatsappUrl = `https://wa.me/${this.whatsappNumber}`;
-    window.open(whatsappUrl, '_blank');
-  }
+  stats = [
+    { num: '+150', lbl: 'Prestataires vérifiés' },
+    { num: '+500', lbl: 'Travaux réalisés' },
+    { num: '2',    lbl: 'Villes couvertes' },
+    { num: '3.8/5', lbl: 'Note moyenne' },
+  ];
+
+  services = [
+    { icon:'❄️', nom:'Climatisation & Froid',  price:'Nettoyage split : 8 000 – 12 000 F\nRecharge gaz : à partir de 20 000 F',    typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
+    { icon:'🔧', nom:'Plomberie',               price:'Débouchage : à partir de 8 000 F\nVisite diagnostic : 2 500 F',             typeClass:'badge-visit', typeLabel:'🔍 Visite + devis' },
+    { icon:'⚡', nom:'Électricité',             price:'Prise / interrupteur : à partir de 8 000 F\nVisite diagnostic : 2 500 F',    typeClass:'badge-visit', typeLabel:'🔍 Visite + devis' },
+    { icon:'🎨', nom:'Peinture',                price:'1 pièce (main d\'œuvre) : 25 000 – 40 000 F\nGrand chantier : sur devis',    typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
+    { icon:'🚪', nom:'Menuiserie',              price:'Réparation porte/serrure : 8 000 – 20 000 F\nSur mesure : selon matériaux',  typeClass:'badge-devis', typeLabel:'📋 Sur devis' },
+    { icon:'🌿', nom:'Jardinage',               price:'Tonte pelouse : 5 000 – 10 000 F\nEntretien complet : à partir de 20 000 F', typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
+  ];
+
+  steps = [
+    { title: 'Vous contactez via WhatsApp', desc: 'Cliquez "Prendre rendez-vous", décrivez votre besoin. On vous répond dans les 2h.' },
+    { title: 'On trouve votre pro & vous payez', desc: 'On vous propose un technicien qualifié avec le tarif. Vous payez par Mobile Money avant l\'intervention.' },
+    { title: 'Le pro intervient chez vous', desc: 'Il effectue le travail. Vous validez par WhatsApp. Nous le payons dans les 2h. Laissez un avis.' },
+  ];
+
+  temoignages = [
+    { stars:'★★★★★', text:'J\'ai utilisé leur service pour un jardinier et j\'ai été agréablement surpris par la qualité du travail. Le jardinier était compétent, sympathique, et mon jardin n\'a jamais été aussi beau.', nom:'Jean-Luc', lieu:'Cocody, Abidjan', initiales:'JL' },
+    { stars:'★★★★★', text:'Que ce soit pour trouver un électricien ou un jardinier, leur plateforme est toujours là pour m\'aider rapidement. Leur équipe est très professionnelle et serviable.', nom:'Sylvie', lieu:'Bassam, Abidjan', initiales:'SY' },
+    { stars:'★★★★☆', text:'Ma climatisation est tombée en panne pendant la canicule. Grâce à Soutramoi, j\'ai trouvé un technicien qualifié qui est venu rapidement et a tout réparé en un temps record.', nom:'David', lieu:'Marcory, Abidjan', initiales:'DA' },
+  ];
+
+  proStats = [
+    { num:'+150', lbl:'Prestataires actifs' },
+    { num:'+500', lbl:'Missions réalisées' },
+    { num:'24h',  lbl:'Délai paiement' },
+    { num:'0 F',  lbl:'Frais d\'inscription' },
+  ];
 
 }

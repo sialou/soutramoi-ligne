@@ -1,1 +1,41 @@
-.top-50{margin-top: 50px;}
+/* src/app/pages/prestataire/prestataire.component.css */
+.hero-pro { background: linear-gradient(135deg,#0F172A,#0369A1); padding: 70px 5%; display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
+.hero-pro-content h1 { font-size: 42px; font-weight: 800; color: #fff; margin: 14px 0; line-height: 1.15; }
+.hero-pro-content h1 span { color: #FDE68A; }
+.hero-pro-content p { font-size: 16px; color: var(--blue-light); line-height: 1.6; margin-bottom: 28px; }
+.btn-join { background: #fff; color: var(--blue-dark); border: none; padding: 14px 28px; border-radius: 99px; font-size: 15px; font-weight: 700; cursor: pointer; transition: .2s; font-family: 'DM Sans',sans-serif; }
+.btn-join:hover { background: var(--blue-light); }
+.hero-pro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pro-stat { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 24px; text-align: center; }
+.stat-num { font-family: 'Outfit',sans-serif; font-size: 36px; font-weight: 800; color: #fff; }
+.stat-lbl { font-size: 12px; color: var(--blue-light); margin-top: 4px; }
+
+.avantages-section { padding: 70px 5%; }
+.avantages-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.avantage-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: .2s; }
+.avantage-card:hover { border-color: var(--blue); box-shadow: var(--shadow); transform: translateY(-2px); }
+.av-icon { font-size: 36px; margin-bottom: 14px; }
+.avantage-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.avantage-card p { font-size: 14px; color: var(--text-2); line-height: 1.6; }
+
+.metiers-section { padding: 60px 5%; background: var(--blue-bg); }
+.metiers-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 800px; margin: 0 auto; }
+.metier-pill { background: #fff; border: 1px solid var(--border); border-radius: 99px; padding: 10px 20px; font-size: 14px; font-weight: 500; cursor: pointer; transition: .2s; }
+.metier-pill:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+.process-section { padding: 70px 5%; }
+.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.process-step { text-align: center; padding: 24px; }
+.process-num { width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; font-family: 'Outfit',sans-serif; font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+.process-icon { font-size: 28px; margin-bottom: 10px; }
+.process-step h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.process-step p { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+.cta-section { background: var(--blue-dark); padding: 70px 5%; text-align: center; }
+.cta-section h2 { font-size: 32px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.cta-section p { font-size: 16px; color: var(--blue-light); margin-bottom: 28px; }
+.btn-join-big { display: inline-flex; align-items: center; gap: 12px; background: #25D366; color: #fff; border: none; padding: 18px 36px; border-radius: 99px; font-size: 17px; font-weight: 700; cursor: pointer; transition: .2s; font-family: 'DM Sans',sans-serif; }
+.btn-join-big:hover { background: #128C7E; transform: translateY(-1px); }
+.cta-note { font-size: 13px; color: var(--blue-light); margin-top: 14px; }
+
+@media(max-width:900px){ .hero-pro,.avantages-grid { grid-template-columns: 1fr; } .process-grid { grid-template-columns: repeat(2,1fr); } }

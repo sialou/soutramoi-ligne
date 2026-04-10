@@ -1,92 +1,75 @@
-<div class="col-6 col-md-3 offset-md-4 mb-5 top-50">
-  <p class="text-center fs-3">Créer un compte</p>
+<!-- src/app/pages/prestataire/prestataire.component.html -->
+<div class="page-wrapper">
 
-    <form *ngIf="!formSubmitted" [formGroup]="signupPrestataireForm" (ngSubmit)="onSubmit()">
-
-      <div class="col-12  mb-3">
-        <label for="InputLastname" class="form-label">Nom et Prénom</label>
-        <input type="text" class="form-control" id="InputLastname" formControlName="name"  >
-        <div *ngIf="signupPrestataireForm.get('name')?.invalid && signupPrestataireForm.get('name')?.touched">
-          Votre nom est requis
-        </div>
-      </div>
-
-      <div class="input-field  col-12  mb-3">
-        <select #select1 required formControlName="service">
-          <option value="" disabled selected>Service</option>
-          <option value="electricite">Electricité</option>
-          <option value="plomberie">Plomberie</option>
-          <option value="menuiserie">Menuiserie</option>
-          <option value="froid">Froid</option>
-          <option value="nettoyage_de_fin_de_chantier">Nettoyage de fin de chantier</option>
-          <option value="blanchisserie">Blanchisserie</option>
-          <option value="jardinage">Jardinage</option>
-          <option value="peintre">Peintre</option>
-
-        </select>
-        <div *ngIf="signupPrestataireForm.get('service')?.invalid && signupPrestataireForm.get('service')?.touched">
-          Le service est requis
-        </div>
-      </div>
-      <div class="col-12  mb-3">
-        <label for="InputExperience" class="form-label"> Nombre d'année d'expérience</label>
-        <input type="number" class="form-control" id="InputExperience" formControlName="experience"  >
-        <div *ngIf="signupPrestataireForm.get('experience')?.invalid && signupPrestataireForm.get('experience')?.touched">
-          Votre nombre d'année d'experience est requis
-        </div>
-      </div>
-      <div class="col-12  mb-3">
-        <label for="InputVille" class="form-label">Ville</label>
-        <input type="text" class="form-control" id="InputVille" formControlName="ville">
-        <div *ngIf="signupPrestataireForm.get('ville')?.invalid && signupPrestataireForm.get('ville')?.touched">
-          Votre ville est requis
-        </div>
-      </div>
-      <div class="col-12  mb-3">
-        <label for="InputCommune" class="form-label">Commune</label>
-        <input type="text" class="form-control" id="InputCommune" formControlName="commune"  required>
-        <div *ngIf="signupPrestataireForm.get('commune')?.invalid && signupPrestataireForm.get('commune')?.touched">
-          Votre Commune est requis
-        </div>
-      </div>
-
-      <div class="col-12  mb-3">
-        <label for="InputTelephone" class="form-label">Téléphone whatsapp</label>
-        <input type="text" class="form-control" id="InputTelephone"  formControlName="tel"  required>
-        <div *ngIf="signupPrestataireForm.get('tel')?.invalid && signupPrestataireForm.get('tel')?.touched">
-          Votre Téléphone est requis
-        </div>
-      </div>
-      <!--<div class="col-12  mb-3">
-        <label for="InputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="InputEmail1" formControlName="email" aria-describedby="emailHelp" required>
-
-      </div>
-      <div class="col-12 mb-3">
-        <label for="InputPassword1" class="form-label">Mot de passe</label>
-        <input type="password" class="form-control"  formControlName="password" id="InputPassword1" required>
-      </div>
-
-      <div class="col-12 mb-3">
-        <label for="InputPassword1" class="form-label">Retaper le mot de Passe</label>
-        <input type="password" class="form-control"  formControlName="password2" id="InputPassword1" required>
-      </div>-->
-      <div class="col-12 mb-5  form-check">
-
-        <label ><input type="checkbox" formControlName="condition"/><span>J’accepte les <a routerLink="/conditions">termes et conditions</a></span></label>
-
-      </div>
-
-      <div class="d-grid gap-2 col-6 mx-auto">
-         <button type="submit" class="btn light-blue accent-2 waves-effect waves-light">S'inscrire</button>
-      </div>
-    </form>
-    <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
-      <span class="blue-text text-darken-2"> Profil inscrit, nous vous reviendrons sou peu pour la validation.</span>
+  <section class="hero-pro">
+    <div class="hero-pro-content">
+      <div class="section-tag" style="background:rgba(255,255,255,.15);color:#fff;">👷 Rejoignez le réseau</div>
+      <h1>Vous êtes un professionnel ?<br><span>Travaillez avec Soutramoi</span></h1>
+      <p>+150 techniciens font déjà confiance à Soutramoi à Abidjan. Recevez des demandes qualifiées directement sur WhatsApp et soyez payé rapidement après chaque mission.</p>
+      <button class="btn-join" (click)="rejoindre()">Devenir prestataire maintenant →</button>
     </div>
-    <!--<p class="text-center fs-5 top-50"> Avez-vous dejà un compte? <a routerLink="/signin">Connexion</a></p>-->
+    <div class="hero-pro-stats">
+      <div class="pro-stat" *ngFor="let s of stats">
+        <div class="stat-num">{{ s.num }}</div>
+        <div class="stat-lbl">{{ s.lbl }}</div>
+      </div>
+    </div>
+  </section>
 
-  <!--<div class="col s5 pull-s7"> <img src="image1.jpg" class="responsive-img" alt="Image 1"></div>-->
+  <!-- AVANTAGES -->
+  <section class="avantages-section">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-tag">Pourquoi nous rejoindre</div>
+      <h2 class="section-title">Ce que Soutramoi vous apporte</h2>
+    </div>
+    <div class="avantages-grid">
+      <div class="avantage-card" *ngFor="let a of avantages">
+        <div class="av-icon">{{ a.icon }}</div>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METIERS -->
+  <section class="metiers-section">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-tag">Métiers recherchés</div>
+      <h2 class="section-title">On cherche des pros dans ces domaines</h2>
+      <p class="section-sub" style="max-width:500px;margin:0 auto;">Si votre métier est dans cette liste, on a des clients qui attendent. Rejoignez-nous dès aujourd'hui.</p>
+    </div>
+    <div class="metiers-grid">
+      <div class="metier-pill" *ngFor="let m of metiers" (click)="rejoindre()">
+        {{ m.icon }} {{ m.nom }}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT CA MARCHE -->
+  <section class="process-section">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-tag">Le processus</div>
+      <h2 class="section-title">Comment ça marche pour vous ?</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step" *ngFor="let p of process; let i = index">
+        <div class="process-num">{{ i + 1 }}</div>
+        <div class="process-icon">{{ p.icon }}</div>
+        <h4>{{ p.title }}</h4>
+        <p>{{ p.desc }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <h2>Prêt à recevoir vos premiers clients ?</h2>
+    <p>Envoyez-nous un message WhatsApp maintenant. On vous intègre en 48h.</p>
+    <button class="btn-join-big" (click)="rejoindre()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Rejoindre via WhatsApp
+    </button>
+    <p class="cta-note">Aucun frais d'inscription · Paiement rapide après chaque mission</p>
+  </section>
+
 </div>
-
-

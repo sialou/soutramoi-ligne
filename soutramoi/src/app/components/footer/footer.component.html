@@ -1,4 +1,4 @@
-<div class="container-fluid text-white bg-black">
+<!--<div class="container-fluid text-white bg-black">
   <footer class="py-5 container">
     <div class="row">
       <div class="col-6 col-md-3 mb-3">
@@ -6,7 +6,7 @@
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a routerLink="/plombierie" class="nav-link p-0 text-white">Plomberie</a></li>
           <li class="nav-item mb-2"><a routerLink="/menuiserie" class="nav-link p-0 text-white">Menuiserie</a></li>
-          <!--<li class="nav-item mb-2"><a routerLink="/" class="nav-link p-0 text-white">Carrelage</a></li>-->
+          
           <li class="nav-item mb-2"><a routerLink="/electricite" class="nav-link p-0 text-white">Electricité</a></li>
           <li class="nav-item mb-2"><a routerLink="/peintre" class="nav-link p-0 text-white">Peintre</a></li>
           <li class="nav-item mb-2"><a routerLink="/jardinage" class="nav-link p-0 text-white">Jardinage</a></li>
@@ -61,4 +61,61 @@
 
     </div>
   </footer>
-</div>
+</div>-->
+<!-- src/app/components/footer/footer.component.html -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand-col">
+      <div class="footer-brand">
+       
+        SOUTRAMOI
+      </div>
+      <p class="footer-desc">La plateforme de services à domicile de référence en Côte d'Ivoire. Professionnels vérifiés, prix transparents, paiement Mobile Money.</p>
+      <button class="footer-wa" (click)="wa()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Nous contacter
+      </button>
+    </div>
+
+    <div>
+      <div class="footer-title">Services</div>
+      <ul class="footer-links">
+        <li *ngFor="let s of services"><a (click)="waService(s)">{{ s }}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a routerLink="/">Accueil</a></li>
+        <li><a routerLink="/abonnement">Abonnement clim</a></li>
+        <li><a routerLink="/prestataire">Devenir prestataire</a></li>
+        <li><a routerLink="/a-propos">À propos</a></li>
+        <li><a routerLink="/contact">Contactez-nous</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer-title">Paiement accepté</div>
+      <div class="payment-badges">
+        <span class="pay-badge">🟠 Orange Money</span>
+        <span class="pay-badge">🟡 MTN Money</span>
+        <span class="pay-badge">🔵 Wave</span>
+        <span class="pay-badge">🟢 Moov Money</span>
+      </div>
+      <div class="footer-title" style="margin-top:20px;">Zones couvertes</div>
+      <p class="footer-desc" style="font-size:13px;">Abidjan (tous quartiers)<br>et environs</p>
+       <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-body-emphasis" href="https://www.facebook.com/soutramoi2"> <i class="fab fa-facebook white-icon fa-lg" style="font-size: 30px;"></i></a></li>
+          <li class="ms-3"><a class="link-body-emphasis" href="https://www.linkedin.com/company/soutramoi"> <i class="fab fa-linkedin white-icon fa-lg" style="font-size: 30px;"></i></a></li>
+
+        </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">© {{ year }} Soutramoi · Côte d'Ivoire · Tous droits réservés</div>
+    <div class="footer-copy">🇨🇮 Fait avec ❤️ à Abidjan</div>
+  </div>
+</footer>
+

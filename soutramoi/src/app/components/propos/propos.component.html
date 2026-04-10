@@ -1,37 +1,76 @@
 
-<div class="container top-50" style="background: linear-gradient(to bottom, #3498db, #fff);margin-bottom: 100px;">
-  <div class="row">
-    <div class="col-md-6 ">
-      <p class="fs-1 text-center fw-bold mt-5">Qui sommes-nous?</p>
-      <p class="fs-5 text-center top-20 lh-lg">Depuis 2021, nous améliorons votre quotidien en vous offrant des professionnels compétents et qualifiés afin de résoudre tous vos problèmes de dépannage.</p>
+<!-- src/app/pages/about/about.component.html -->
+<div class="page-wrapper">
+
+  <section class="hero-about">
+    <div class="section-tag" style="background:rgba(255,255,255,.2);color:#fff;">🏠 Notre histoire</div>
+    <h1>On te soutra,<br><span>parce que t'es pas seul !</span></h1>
+    <p>Soutramoi est né d'un constat simple : trouver un professionnel fiable à Abidjan, c'est souvent la croix et la bannière. On a décidé de changer ça.</p>
+  </section>
+
+  <!-- HISTOIRE -->
+  <section class="story-section">
+    <div class="story-grid">
+      <div class="story-text">
+        <div class="section-tag">Notre mission</div>
+        <h2 class="section-title">Pourquoi Soutramoi existe</h2>
+        <p>Combien de fois avez-vous cherché un plombier de confiance en urgence, sans savoir à qui faire appel ? Ou payé un électricien qui est reparti sans terminer le travail ?</p>
+        <br>
+        <p>Soutramoi répond à ce problème quotidien des ménages ivoiriens : <strong>mettre en relation les familles avec des professionnels vérifiés, à prix transparent, avec un paiement sécurisé.</strong></p>
+        <br>
+        <p>Notre slogan dit tout : <em>"Quand y'a drap, on te soutra"</em>. En nouchi, "soutra" signifie aider, soutenir, couvrir. C'est exactement ce qu'on fait.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card" *ngFor="let v of values">
+          <div class="value-icon">{{ v.icon }}</div>
+          <h4>{{ v.title }}</h4>
+          <p>{{ v.desc }}</p>
+        </div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <img src="../../../assets/propos1.png"  style="width: 30%;float: inline-end;margin-top: 20px;" alt="Your Image" class=" float-right">
+  </section>
+
+  <!-- CHIFFRES -->
+  <section class="chiffres-section">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-tag">En chiffres</div>
+      <h2 class="section-title">Soutramoi aujourd'hui</h2>
     </div>
-  </div>
-</div>
-<div class="container mt-5">
-<p class="fs-5 text-center lh-lg">Remodeler votre maison peut-être stressant… Il est difficile de savoir vers qui se tourner en cas de réparation urgente…
-
-  Le travail commercial doit être effectué de façon professionnelle et dans les délais, tout en tenant compte des codes et des réglementations…Eh bien, tout ça c’est fini car Nous éliminons le besoin de feuilleter les pages jaunes, nous éliminons le stress et l'inquiétude, plus important encore, nous faisons le travail correctement.
-
-  Nos professionnels sont expérimentés et fiables. De plus, leurs compétences sont perfectionnées par le biais de formations concernant tant le niveau technique que la gestion de la clientèle.
-  Nous nous engageons à vous fournir un service exceptionnel, digne de confiance, pour tous vos besoins de réparation et de dépannage.</p>
-</div>
-
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../../../assets/propos2.png"  style="width: 100%;float: inline-start;" alt="Your Image" class=" float-right">
+    <div class="chiffres-grid">
+      <div class="chiffre-card" *ngFor="let c of chiffres">
+        <div class="chiffre-num">{{ c.num }}</div>
+        <div class="chiffre-lbl">{{ c.lbl }}</div>
+        <div class="chiffre-desc">{{ c.desc }}</div>
+      </div>
     </div>
-    <div class="col-md-6">
-      <p class="fs-5 text-left lh-lg" style="margin-top:30%;">Soutramoi est une entreprise de mise en relation entre les professionnels fiables et les particuliers afin de facilité
-        le quotidien des ménages.
+  </section>
 
-        Permettre à chaque personne de contacter facilement un professionnel de métier fiable et qualifié sans se déplacer, tel est notre mission..</p>
+  <!-- EQUIPE -->
+  <section class="team-section">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-tag">L'équipe</div>
+      <h2 class="section-title">Deux Ivoiriens, une mission</h2>
+      <p class="section-sub" style="max-width:500px;margin:0 auto;">Soutramoi est géré par une petite équipe passionnée, basée à Abidjan, qui croit que chaque foyer mérite des professionnels fiables.</p>
     </div>
+    <!--<div class="team-note">
+      <div class="team-icon">💪</div>
+      <div>
+        <h4>Une startup lean et déterminée</h4>
+        <p>On est 2. On a nos boulots à côté. Mais chaque week-end, on travaille pour améliorer Soutramoi et vous offrir un service toujours meilleur. C'est ça la vraie solidarité ivoirienne.</p>
+      </div>
+    </div>-->
+  </section>
 
-  </div>
+  <!-- CTA -->
+  <section class="cta-about">
+    <h2>Prêt à nous rejoindre ?</h2>
+    <p>Que vous soyez client ou prestataire, Soutramoi est là pour vous.</p>
+    <div class="cta-btns">
+      <button class="btn-wa" (click)="demanderService()">Je cherche un service</button>
+      <a routerLink="/prestataire" class="btn-outline">Devenir prestataire</a>
+    </div>
+  </section>
+
 </div>
 <div class="row">
 <div class="col-sm-8  offset-sm-2 text-center  mb-sm-5 text-black border-bottom text-uppercase ">

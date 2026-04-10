@@ -1,161 +1,125 @@
+<!-- src/app/pages/abonnement/abonnement.component.html -->
+<div class="page-wrapper">
 
-<div class="container py-3 top-50">
-  <!--<header>
-
-
-    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-      <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
-      <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+  <!-- HERO -->
+  <section class="hero-ab">
+    <div class="hero-ab-content">
+      <div class="section-tag" style="background:rgba(255,255,255,.2);color:#fff;">❄️ Offre exclusive Soutramoi</div>
+      <h1>L'abonnement clim<br>qui vous <span>protège toute l'année</span></h1>
+      <p>À Abidjan, la chaleur ne pardonne pas. Un climatiseur mal entretenu tombe en panne au pire moment. On s'occupe de tout.</p>
     </div>
-  </header>-->
-  <p class="text-center fs-4">Choississez votre type d'abonnement pour ce service</p>
+  </section>
 
-  <main>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center top-50">
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Starter</h4>
+  <!-- OFFRE PRINCIPALE -->
+  <section class="offer-section">
+    <div class="offer-grid">
+
+      <div class="offer-card featured">
+        <div class="offer-badge">⭐ OFFRE LA PLUS POPULAIRE</div>
+        <h2>Confort Clim</h2>
+        <p class="offer-tagline">La tranquillité toute l'année, sans mauvaise surprise</p>
+        <div class="price-block">
+          <span class="price-big">21 000</span>
+          <span class="price-per">FCFA / Trimestre</span>
+        </div>
+        <p class="price-note">= 84 000 FCFA/an · payable en mensualités confortables</p>
+        <ul class="offer-feats">
+          <li *ngFor="let f of features">
+            <span class="feat-check">✓</span>
+            <div>
+              <strong>{{ f.title }}</strong>
+              <span>{{ f.desc }}</span>
+            </div>
+          </li>
+        </ul>
+        <div class="engagement">🔒 Engagement 3 mois minimum · Sans frais d'inscription · Résiliable ensuite</div>
+        <button class="btn-subscribe" (click)="sAbonner()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          S'abonner via WhatsApp
+        </button>
+        <p class="pay-note">Paiement : Orange Money · MTN · Wave · Moov</p>
+      </div>
+
+      <div class="why-col">
+        <h3>Pourquoi s'abonner ?</h3>
+        <div class="why-items">
+          <div class="why-item" *ngFor="let w of whyItems">
+            <div class="why-icon">{{ w.icon }}</div>
+            <div>
+              <h4>{{ w.title }}</h4>
+              <p>{{ w.desc }}</p>
+            </div>
           </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">Fcfa 10 000<small class="text-body-secondary fw-light">/1mois</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Accès à nos services  24/7</li>
-              <li>Email support</li>
-              <li>Service de rappel</li>
-              <li></li>
-              <li></li>
-            </ul>
-            <!--<button type="button" routerLink="/paiement-abonnement" class="w-100 btn btn-lg light-blue accent-2">S'abonner</button>-->
+        </div>
+
+        <div class="faq-block">
+          <h3>Questions fréquentes</h3>
+          <div class="faq-item" *ngFor="let faq of faqs" (click)="faq.open = !faq.open">
+            <div class="faq-q">
+              {{ faq.q }}
+              <span [class.rotated]="faq.open">▼</span>
+            </div>
+            <div class="faq-a" *ngIf="faq.open">{{ faq.a }}</div>
           </div>
         </div>
       </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Pro</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">Fcfa 25 000<small class="text-body-secondary fw-light">/3 mois</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Accès à nos services  24/7</li>
-              <li>Email support</li>
-              <li>Service de rappel</li>
-              <li>Service de consultation à distance</li>
 
-            </ul>
-            <!--<button type="button" routerLink="/paiement-abonnement" class="w-100 btn btn-lg light-blue accent-2">S'abonner</button>-->
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">Fcfa 90 000<small class="text-body-secondary fw-light">/12 mois</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>Accès à nos services  24/7</li>
-              <li>Email support</li>
-              <li>Service de rappel</li>
-              <li>Service de consultation à distance</li>
-              <li>Conseils personnalisés</li>
-            </ul>
-            <!--<button type="button" routerLink="/paiement-abonnement" class="w-100 btn btn-lg light-blue accent-2">S'abonner</button>-->
-          </div>
-        </div>
+    </div>
+  </section>
+<section class="mini-plans">
+  <div class="mini-plans-container">
+
+    <!-- ESSENTIEL -->
+    <div class="mini-card">
+      <div class="mini-badge">Recommandé</div>
+      <h3>Essentiel</h3>
+      <div class="mini-price">39 000 F</div>
+      <div class="mini-period">/ Semestre sans engagement</div>
+ <span class="price-note">soit 78 000 FCFA/an · payable en mensualités confortables</span>
+      <ul>
+        <li>✔ 2 nettoyages complets</li>
+        <li>✔ 2 Contrôle rapide inclus</li>
+        <li>✔ Pro disponible sous 24h</li>
+        <li>✔ Suivi WhatsApp inclus</li>
+        <li>✔ Paiement Mobile Money</li>
+        <li class="disabled">✖ Pas de pro dédié fixe</li>
+      </ul>
+    </div>
+
+    <!-- CONFORT -->
+    <div class="mini-card premium">
+      <div class="mini-badge premium-badge">Premium</div>
+      <h3>Confort</h3>
+      <div class="mini-price">60 000 F / an</div>
+      
+
+      <ul>
+        <li>✔ 4 nettoyages complets</li>
+        <li>✔ 4 Contrôle rapide inclus</li>
+        <li>✔ Pro dédié fixe attitré</li>
+        <li>✔ Intervention sous 24h</li>
+        <li>✔ Suivi WhatsApp prioritaire</li>
+        <li>✔ Paiement Mobile Money</li>
+        <li>✔ Facturation entreprise</li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+  <!-- COMMENT CA MARCHE -->
+  <section class="steps-section">
+    <div class="section-head" style="text-align:center;">
+      <div class="section-tag">Simple comme bonjour</div>
+      <h2 class="section-title">Comment s'abonner ?</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card" *ngFor="let s of steps; let i = index">
+        <div class="step-num">{{ i + 1 }}</div>
+        <h4>{{ s.title }}</h4>
+        <p>{{ s.desc }}</p>
       </div>
     </div>
-  </main>
+  </section>
+
 </div>
-<div class="col-6 col-md-3 offset-md-4 mb-5 top-50">
-  <p class="text-center fs-3">Soucrivez ici</p>
-
-  <form *ngIf="!formSubmitted" [formGroup]="abonnementForm" (ngSubmit)="onSubmit()">
-    <div class="col-12  mb-3 top-50">
-      <label for="InputLastname" class="form-label">Nom et Prénom</label>
-      <input type="text" class="form-control" id="InputLastname" formControlName="name" aria-describedby="emailHelp" >
-      <div *ngIf="abonnementForm.get('name')?.invalid && abonnementForm.get('name')?.touched">
-        Votre nom est requis
-      </div>
-    </div>
-    <div class="col-12  mb-3">
-      <label for="InputTelephone" class="form-label">Téléphone</label>
-      <input type="text" class="form-control" id="InputTelephone"  formControlName="tel" aria-describedby="emailHelp" >
-      <div *ngIf="abonnementForm.get('tel')?.invalid && abonnementForm.get('tel')?.touched">
-        Votre téléphone est requis
-      </div>
-    </div>
-    <div class="input-field  col-12  mb-3">
-      <select #select1 required formControlName="type_abonnement">
-        <option value="" disabled selected>Choisissez le Type d'abonnement</option>
-        <option value="starter">Starter</option>
-        <option value="pro">Pro</option>
-        <option value="enterprise">Enterprise</option>
-      </select>
-      <div *ngIf="abonnementForm.get('type_abonnement')?.invalid && abonnementForm.get('type_abonnement')?.touched">
-        Votre email est requis
-      </div>
-    </div>
-   <!-- <input type="hidden" formControlName="user_id" [value]="123">
-    <input type="hidden" formControlName="job_id" [value]="123">-->
-
-   <div class="input-field col-12  mb-3">
-      <select multiple #select2 required formControlName="service">
-        <option value="" disabled selected>Choisissez le(s) Services  </option>
-        <option value="froid">Froid</option>
-        <option value="jardinage">Jardinage</option>
-        <option value="blanchisserie">Blanchisserie</option>
-      </select>
-      <div *ngIf="abonnementForm.get('service')?.invalid && abonnementForm.get('service')?.touched">
-        Votre email est requis
-      </div>
-
-    </div>
-    <!--<div class="input-field col-12  mb-3">
-      <select #select2 required formControlName="service">
-        <option value="" disabled selected>Choisissez le(s) Services  </option>
-        <option value="1">Froid</option>
-        <option value="2">Jardinage</option>
-        <option value="3">Blanchisserie</option>
-      </select>
-
-    </div>-->
-
-
-
-    <!--<div class="col-12  mb-3">
-      <label for="InputVille" class="form-label">Ville</label>
-      <input type="text" class="form-control" id="InputVille" aria-describedby="emailHelp">
-    </div>
-    <div class="col-12  mb-3">
-      <label for="InputCommune" class="form-label">Commune</label>
-      <input type="text" class="form-control" id="InputCommune" aria-describedby="emailHelp">
-    </div>
-
-    <div class="col-12  mb-3">
-      <label for="InputTelephone" class="form-label">Téléphone</label>
-      <input type="text" class="form-control" id="InputTelephone" aria-describedby="emailHelp">
-    </div>
-    <div class="col-12  mb-3">
-      <label for="InputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
-
-    </div>-->
-
-    <div class="col-12  mb-5  form-check">
-
-      <label ><input type="checkbox"  required/><span>J’accepte les <a routerLink="/conditions">termes et conditions</a></span></label>
-    </div>
-    <div class="d-grid gap-2 col-6 mx-auto">
-       <button type="submit" class="btn light-blue accent-2 waves-effect waves-light">S'abonner</button>
-    </div>
-  </form>
-  <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
-    <span class="blue-text text-darken-2"> Demande d'abonnement envoyée</span>
-  </div>
-
-
-  </div>
-

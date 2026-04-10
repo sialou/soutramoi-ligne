@@ -1,72 +1,100 @@
-<div class="container">
-<div class="row top-50">
-  <div class="col s7 push-s5" >
+<!-- src/app/pages/contact/contact.component.html -->
+<div class="page-wrapper">
 
-    <p class="text-center fs-4 top-50">Ecrivez nous</p>
+  <section class="hero-contact">
+    <div class="section-tag" style="background:rgba(255,255,255,.2);color:#fff;">💬 On vous répond sous 2h</div>
+    <h1>Contactez-nous</h1>
+    <p>Une question, un devis, un problème ? On est là sur WhatsApp du lundi au dimanche, de 7h à 21h.</p>
+  </section>
 
+  <section class="contact-section">
+    <div class="contact-grid">
 
-    <form *ngIf="!formSubmitted" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <!-- FORMULAIRE -->
+      <div class="contact-form-col">
+        <h2>Envoyez-nous un message</h2>
+        <p class="form-subtitle">Remplissez le formulaire et on vous répond via WhatsApp dans les 2h.</p>
 
-      <div class="col-12  mb-3">
-
-        <label for="Email" class="form-label">Email </label>
-        <input type="email"   class="form-control"    aria-describedby="emailHelp" formControlName="email"  />
-
-        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-          Votre email est requis
-        </div>
-        <!--<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>-->
-
-      </div>
-      <div class="col-12  mb-3">
-
-        <label for="Message" class="form-label">Votre message </label>
-        <textarea id="textarea1"  class="materialize-textarea form-control"  formControlName="message" required></textarea>
-        <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-          Votre message est requis
-        </div>
-      </div>
-
-      <div class="d-grid gap-2 col-6 mx-auto">
-
-      <!--<button class="btn light-blue accent-2 waves-effect waves-light" type="submit" name="action">Envoyer-->
-        <button class="btn light-blue accent-2 waves-effect waves-light" type="submit">Envoyer
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-    </form>
-
-    <div *ngIf="formSubmitted" class="card-panel col-12  mb-3 top-50">
-      <span class="blue-text text-darken-2"> Message envoyé</span>
-    </div>
-    </div>
-    <div class="col s5 pull-s7" >
-
-    <img class="materialboxed" width="100%" src="../../../assets/contact.png">
-
-        <p class="col mt-4"><i class="fa fa-map-marker " ></i> Abidjan , Côte d'ivoire. </p>
-        <p class="col mt-4"><i class="fa fa-envelope " ></i> info&#64;soutramoi.com </p>
-
-        <p class="col mt-4"><i class="fa fa-phone " ></i> +225 05 64 55 57 00 </p>
-          <!--<form  (ngSubmit)="onSubmit()"  #contactForm="ngForm">
-            <div class="col-12  mb-3">
-              <label for="exampleInputPassword1" class="form-label">Nom et prénom</label>
-              <input type="textarea" class="form-control" id="exampleInputPassword1" required pattern="^[a-zA-Z0-9àéèç]{1,100}$"  [(ngModel)]="contact.name" name="name" #name="ngModel">
-              <div [hidden]="name.valid || name.pristine" class="red accent1"> Entrez un nom correct.</div>
-            </div>
-            <div class="col-12  mb-3">
-              <label for="exampleInputEmail1" class="form-label">Ecrivez nous </label>
-              <input type="textarea" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-
-            </div>
-
-
-            <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" [disabled]="!contactForm.form.valid" class="btn light-blue accent-2 mb-5 btn-lg">Envoyer</button>
+        <form class="contact-form" (ngSubmit)="envoyer()">
+          <div class="form-group">
+            <label>Votre nom *</label>
+            <input type="text" [(ngModel)]="form.nom" name="nom" placeholder="Ex: Kouassi Marie" required>
           </div>
-          </form>-->
-
+          <div class="form-group">
+            <label>Votre numéro WhatsApp *</label>
+            <input type="tel" [(ngModel)]="form.tel" name="tel" placeholder="Ex: 0701234567" required>
+          </div>
+          <div class="form-group">
+            <label>Sujet *</label>
+            <select [(ngModel)]="form.sujet" name="sujet" required>
+              <option value="">Choisissez un sujet</option>
+              <option *ngFor="let s of sujets" [value]="s">{{ s }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Votre quartier</label>
+            <input type="text" [(ngModel)]="form.quartier" name="quartier" placeholder="Ex: Cocody, Yopougon, Marcory...">
+          </div>
+          <div class="form-group">
+            <label>Votre message *</label>
+            <textarea [(ngModel)]="form.message" name="message" rows="5" placeholder="Décrivez votre besoin en détail..." required></textarea>
+          </div>
+          <button type="submit" class="btn-send" [disabled]="!isValid()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Envoyer via WhatsApp
+          </button>
+          <p class="form-note">Votre message s'ouvrira dans WhatsApp. Cliquez sur Envoyer pour nous le transmettre.</p>
+        </form>
       </div>
 
-  </div>
+      <!-- INFOS CONTACT -->
+      <div class="contact-info-col">
+        <h2>Autres façons de nous joindre</h2>
+
+        <div class="contact-card" (click)="waDirecte()">
+          <div class="contact-icon" style="background:#E8FDF0;">📱</div>
+          <div>
+            <h4>WhatsApp direct</h4>
+            <p>Cliquez pour ouvrir une conversation</p>
+            <span class="contact-link">+225 57 99 48 46</span>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon" style="background:#FEF3C7;">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>Pour les demandes formelles</p>
+            <span class="contact-link">info&#64;soutramoi.com</span>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon" style="background:var(--blue-bg);">📍</div>
+          <div>
+            <h4>Zone couverte</h4>
+            <p>Tous les quartiers d'Abidjan</p>
+            <span class="contact-link">Cocody · Yopougon · Marcory · Adjamé · Treichville · Abobo · Plateau · Port-Bouet · Koumassi</span>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon" style="background:#FEF3C7;">🕐</div>
+          <div>
+            <h4>Horaires</h4>
+            <p>Nous répondons :</p>
+            <span class="contact-link">Lun – Dim : 7h00 – 21h00</span>
+          </div>
+        </div>
+
+        <div class="urgence-box">
+          <div class="urgence-title">🚨 Urgence ?</div>
+          <p>Panne de clim, fuite d'eau, panne électrique ? Ne passez pas par le formulaire.</p>
+          <button class="btn-urgence" (click)="urgence()">Appeler en urgence sur WhatsApp</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 </div>

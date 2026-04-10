@@ -45,3 +45,41 @@
   max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
   height: auto; /* Ajustez la hauteur en fonction de la largeur pour maintenir les proportions de l'image */
 }
+/* src/app/pages/about/about.component.css */
+.hero-about { background: linear-gradient(135deg,#0EA5E9,#0F172A); padding: 80px 5%; text-align: center; }
+.hero-about h1 { font-size: 48px; font-weight: 800; color: #fff; margin: 14px 0; line-height: 1.15; }
+.hero-about h1 span { color: #FDE68A; }
+.hero-about p { font-size: 17px; color: rgba(255,255,255,.85); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+.story-section { padding: 70px 5%; }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.story-text p { font-size: 15px; color: var(--text-2); line-height: 1.7; }
+.story-text strong { color: var(--text); }
+.story-text em { color: var(--blue-dark); font-style: normal; font-weight: 600; }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.value-card { background: var(--blue-bg); border-radius: var(--radius); padding: 20px; }
+.value-icon { font-size: 26px; margin-bottom: 10px; }
+.value-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.value-card p { font-size: 13px; color: var(--text-2); line-height: 1.5; }
+
+.chiffres-section { padding: 70px 5%; background: var(--blue-dark); }
+.chiffres-section .section-tag { background: rgba(255,255,255,.15); color: #fff; }
+.chiffres-section .section-title { color: #fff; }
+.chiffres-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+.chiffre-card { text-align: center; padding: 24px; border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); }
+.chiffre-num { font-family: 'Outfit',sans-serif; font-size: 44px; font-weight: 800; color: #fff; }
+.chiffre-lbl { font-size: 14px; font-weight: 600; color: var(--blue-light); margin: 4px 0; }
+.chiffre-desc { font-size: 12px; color: rgba(255,255,255,.5); }
+
+.team-section { padding: 70px 5%; }
+.team-note { display: flex; gap: 24px; align-items: flex-start; background: var(--blue-bg); border-radius: var(--radius); padding: 32px; max-width: 700px; margin: 0 auto; border-left: 4px solid var(--blue); }
+.team-icon { font-size: 40px; min-width: 50px; }
+.team-note h4 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+.team-note p { font-size: 15px; color: var(--text-2); line-height: 1.7; }
+
+.cta-about { background: var(--blue-bg); padding: 70px 5%; text-align: center; }
+.cta-about h2 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+.cta-about p { font-size: 16px; color: var(--text-2); margin-bottom: 28px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+@media(max-width:900px){ .story-grid { grid-template-columns: 1fr; } .chiffres-grid { grid-template-columns: repeat(2,1fr); } .hero-about h1 { font-size: 32px; } }

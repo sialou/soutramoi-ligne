@@ -5,13 +5,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import emailjs from '@emailjs/browser';
+import { WhatsappService } from '../shared/Whatsapp.service';
 declare var M: any;
 @Component({
   selector: 'app-abonnement',
   templateUrl: './abonnement.component.html',
   styleUrls: ['./abonnement.component.css']
 })
-export class AbonnementComponent implements AfterViewInit {
+export class AbonnementComponent  {
 
   abonnementForm: FormGroup = new FormGroup({
     type_abonnement:new FormControl(''),
@@ -26,12 +27,12 @@ export class AbonnementComponent implements AfterViewInit {
   myDate = new Date();
   formSubmitted: boolean = false;
   formInvalid: boolean = false;
-  constructor(private http: HttpClient, private datePipe: DatePipe, private fb: FormBuilder){ }
+  constructor(private http: HttpClient, private datePipe: DatePipe, private fb: FormBuilder,private whatsapp: WhatsappService){ }
 
   @ViewChild('select1', {static: false}) select1Element: ElementRef;
   @ViewChild('select2', {static: false}) select2Element: ElementRef;
 
-  ngAfterViewInit() {
+  /*ngAfterViewInit() {
     this.initializeSelect();
   }
 
@@ -54,7 +55,7 @@ export class AbonnementComponent implements AfterViewInit {
       tel: ['', Validators.required],
 
     });
-  }
+  }*/
 
   async onSubmit() {
 
@@ -104,4 +105,40 @@ export class AbonnementComponent implements AfterViewInit {
   }
 }
 
+/*new*/
+
+
+
+  sAbonner() { this.whatsapp.abonnement(); }
+
+  features = [
+    { title: '1 nettoyages complets',    desc: 'Filtres, bac à eau, unité intérieure et extérieure.' },
+    { title: '1 Contrôle rapide inclus',  desc: '30 min pour vérifier que tout va bien.' },
+   /* { title: 'Technicien dédié fixe',           desc: 'Un technicien attitré qui connaît votre installation.' },*/
+    { title: 'Intervention garantie sous 24h',  desc: 'Panne urgente ? On envoie quelqu\'un rapidement.' },
+    { title: 'Paiement Mobile Money',           desc: 'Orange Money, MTN, Wave ou Moov. Simple et sécurisé.' },
+    { title: 'Suivi et rappels WhatsApp',       desc: 'On vous prévient avant chaque passage. Aucun oubli.' },
+  ];
+
+  whyItems = [
+    { icon: '🌡️', title: 'Abidjan, c\'est chaud toute l\'année', desc: 'Un clim entretenu régulièrement consomme 30% d\'énergie en moins et dure 3× plus longtemps.' },
+    { icon: '💸', title: 'Évitez les grosses pannes coûteuses', desc: 'Un nettoyage à 10 000 F évite une réparation à 80 000 F. L\'entretien préventif, c\'est rentable.' },
+    { icon: '😌', title: 'Zéro souci, on gère tout', desc: 'Vous recevez un rappel WhatsApp avant chaque passage. Vous n\'avez rien à chercher ni à organiser.' },
+  ];
+
+  faqs: { q: string; a: string; open: boolean }[] = [
+    { q: 'Combien de climatiseurs sont couverts ?', a: 'L\'abonnement couvre 1 climatiseur. Pour plusieurs clims, contactez-nous via WhatsApp pour un tarif groupe.', open: false },
+    { q: 'Que se passe-t-il si mon clim tombe en panne ?', a: 'Les abonnés sont prioritaires. On envoie un technicien sous 24h. Le diagnostic est gratuit, seules les pièces sont facturées si nécessaire.', open: false },
+    { q: 'Comment se passe le paiement ?', a: 'Vous payez le montant de l`abonnement  par Mobile Money (Orange, MTN, Wave, Moov). Vous recevez une confirmation WhatsApp dès réception.', open: false },
+    { q: 'Puis-je résilier l\'abonnement ?', a: 'Oui, après les 3 premiers mois. Envoyez-nous simplement un message WhatsApp 7 jours avant la prochaine échéance.', open: false },
+    { q: 'Quelles marques de clim sont prises en charge ?', a: 'Toutes les marques : Samsung, LG, Midea, Daikin, Panasonic, Haier, Hisense, Gree et autres.', open: false },
+  ];
+
+  steps = [
+    { title: 'Envoyez-nous un message', desc: 'Cliquez sur "S\'abonner via WhatsApp". Indiquez votre quartier et le type de clim.' },
+    { title: 'On vous confirme et planifie', desc: 'On vous répond en moins de 2h avec la date du premier passage et le technicien attitré.' },
+    { title: 'Vous payez et on arrive', desc: 'Paiement Mobile Money avant le passage. Le technicien vient, fait le travail, vous validez.' },
+  ];
 }
+
+

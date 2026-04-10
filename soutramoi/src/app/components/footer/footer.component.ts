@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { DatePipe } from '@angular/common';
 import emailjs from '@emailjs/browser';
+import { WhatsappService } from '../shared/Whatsapp.service';
 
 @Component({
   selector: 'app-footer',
@@ -17,7 +18,7 @@ export class FooterComponent {
   });
   formSubmitted: boolean = false;
   formInvalid: boolean = false;
-  constructor(private http: HttpClient, private datePipe: DatePipe, private fb: FormBuilder){ }
+  constructor(private http: HttpClient, private datePipe: DatePipe, private fb: FormBuilder,private whatsapp: WhatsappService){ }
   ngOnInit(): void {
     this.newsletterForm= this.fb.group({
       email: ['', [Validators.required, Validators.email]]
@@ -67,6 +68,12 @@ export class FooterComponent {
     }
   }
 
+   year = new Date().getFullYear();
+  services = ['Climatisation', 'Plomberie', 'Électricité', 'Peinture', 'Menuiserie', 'Jardinage', 'Blanchisserie'];
+
+  
+  wa()                  { this.whatsapp.open(); }
+  waService(nom: string){ this.whatsapp.service(nom); }
 
 
 }

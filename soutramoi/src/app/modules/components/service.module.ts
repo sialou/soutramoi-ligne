@@ -111,7 +111,7 @@ const serviceRoutes: Routes =[
   imports: [
     CommonModule,
 
-   // FormsModule,
+    FormsModule,
    NgbModule,
     ReactiveFormsModule,
     JsonPipe,
