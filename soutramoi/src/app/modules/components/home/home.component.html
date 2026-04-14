@@ -1,6 +1,164 @@
 <!-- src/app/pages/home/home.component.html -->
 <div class="page-wrapper">
 
+  <div class="rain-banner" *ngIf="showRainBanner">
+  <span class="rain-banner-text">
+    🌧️ Saison des pluies en cours à Abidjan — Protégez votre maison avant les fortes averses
+  </span>
+  
+  <button class="rain-banner-close" (click)="showRainBanner = false">✕</button>
+</div>
+
+<!-- SECTION SPÉCIALE PLUIES -->
+<section class="rain-section" id="pluies">
+
+  <div class="rain-section-head">
+    <div class="rain-badge">
+      <span class="rain-drop">🌧️</span>
+      <span>Spécial saison des pluies — Mai à Juillet 2026</span>
+    </div>
+    <h2>Protégez votre maison<br><span>avant qu'il soit trop tard</span></h2>
+    <p>La SODEXAM prévoit des pluies <strong>supérieures à la normale</strong> jusqu'en juillet. Caniveaux bouchés, toitures qui fuient, risques électriques… agissez maintenant.</p>
+    <div class="rain-urgency">
+      <span class="urgency-dot"></span>
+      Intervention sous 24h · Paiement Mobile Money · Professionnel vérifié
+    </div>
+  </div>
+
+  <div class="rain-grid">
+
+    <!-- SERVICE 1 — CURAGE -->
+    <div class="rain-card top-card" (click)="waRain('curage de caniveaux et évacuation d\'eaux pluviales')">
+      <div class="rain-card-urgency">🚨 Urgence #1</div>
+      <div class="rain-card-icon">🚿</div>
+      <h3>Curage de caniveaux</h3>
+      <p>Caniveaux bouchés = eaux qui rentrent dans votre maison. Intervenez avant les grosses averres.</p>
+      <div class="rain-price">
+        <span class="price-from">À partir de</span>
+        <span class="price-val">15 000 F</span>
+      </div>
+      <div class="rain-includes">
+        <span>✓ Nettoyage complet</span>
+        <span>✓ Évacuation débris</span>
+        <span>✓ Test d'écoulement</span>
+      </div>
+      <button class="btn-rain-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Demander ce service
+      </button>
+    </div>
+
+    <!-- SERVICE 2 — TOITURE -->
+    <div class="rain-card top-card" (click)="waRain('réparation et imperméabilisation de toiture avant la saison des pluies')">
+      <div class="rain-card-urgency">🚨 Urgence #2</div>
+      <div class="rain-card-icon">🏠</div>
+      <h3>Réparation toiture</h3>
+      <p>Une fuite non traitée maintenant coûtera 10× plus cher après les dégâts. Diagnostic gratuit inclus.</p>
+      <div class="rain-price">
+        <span class="price-from">À partir de</span>
+        <span class="price-val">30 000 F</span>
+      </div>
+      <div class="rain-includes">
+        <span>✓ Inspection complète</span>
+        <span>✓ Imperméabilisation</span>
+        <span>✓ Remplacement tôles</span>
+      </div>
+      <button class="btn-rain-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Demander ce service
+      </button>
+    </div>
+
+    <!-- SERVICE 3 — ELECTRICITE -->
+    <div class="rain-card" (click)="waRain('vérification électrique anti-humidité avant la saison des pluies')">
+      <div class="rain-card-urgency" style="background:#FAEEDA;color:#633806;">⚠️ Urgent</div>
+      <div class="rain-card-icon">⚡</div>
+      <h3>Vérification électrique</h3>
+      <p>Humidité + câbles vieillissants = risque électrocution. Faites vérifier votre tableau avant les pluies.</p>
+      <div class="rain-price">
+        <span class="price-from">Diagnostic</span>
+        <span class="price-val">10 000 F</span>
+      </div>
+      <div class="rain-includes">
+        <span>✓ Inspection tableau</span>
+        <span>✓ Test prises & câbles</span>
+        <span>✓ Rapport écrit</span>
+      </div>
+      <button class="btn-rain-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Demander ce service
+      </button>
+    </div>
+
+    <!-- SERVICE 4 — PEINTURE -->
+    <div class="rain-card" (click)="waRain('peinture anti-humidité et traitement des moisissures pour la saison des pluies')">
+      <div class="rain-card-urgency" style="background:#FAEEDA;color:#633806;">📋 Porteur</div>
+      <div class="rain-card-icon">🎨</div>
+      <h3>Peinture anti-humidité</h3>
+      <p>Murs qui suintent, moisissures qui apparaissent ? La peinture anti-humidité protège et embellit.</p>
+      <div class="rain-price">
+        <span class="price-from">1 pièce à partir de</span>
+        <span class="price-val">25 000 F</span>
+      </div>
+      <div class="rain-includes">
+        <span>✓ Traitement moisissures</span>
+        <span>✓ Peinture spéciale</span>
+        <span>✓ Finition soignée</span>
+      </div>
+      <button class="btn-rain-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Demander ce service
+      </button>
+    </div>
+
+    <!-- SERVICE 5 — ELAGAGE -->
+    <div class="rain-card" (click)="waRain('élagage d\'arbres et jardinage préventif avant la saison des pluies')">
+      <div class="rain-card-urgency" style="background:#E1F5EE;color:#085041;">🌿 Préventif</div>
+      <div class="rain-card-icon">🌳</div>
+      <h3>Élagage & jardinage</h3>
+      <p>Les fortes pluies font tomber branches et arbres mal taillés sur toitures et véhicules. Agissez avant.</p>
+      <div class="rain-price">
+        <span class="price-from">À partir de</span>
+        <span class="price-val">15 000 F</span>
+      </div>
+      <div class="rain-includes">
+        <span>✓ Taille préventive</span>
+        <span>✓ Évacuation branches</span>
+        <span>✓ Nettoyage jardin</span>
+      </div>
+      <button class="btn-rain-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Demander ce service
+      </button>
+    </div>
+
+    <!-- CTA PACK COMPLET -->
+    <div class="rain-card rain-pack" (click)="waRainPack()">
+      <div class="rain-pack-badge">💰 Meilleure valeur</div>
+      <div class="rain-card-icon">🏡</div>
+      <h3>Pack Maison Sèche</h3>
+      <p>Diagnostic complet de votre maison avant la saison : caniveaux + toiture + électricité. Tout en une seule visite.</p>
+      <div class="rain-price">
+        <span class="price-from">Pack complet</span>
+        <span class="price-val">25 000 F</span>
+      </div>
+      <div class="rain-includes">
+        <span>✓ 3 diagnostics en 1 visite</span>
+        <span>✓ Rapport complet</span>
+        <span>✓ Devis travaux offert</span>
+        <span>✓ Économie de 7 500 F</span>
+      </div>
+      <button class="btn-rain-pack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.107 1.523 5.832L.057 23.704a.75.75 0 00.958.889l5.906-1.944A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.896 0-3.68-.52-5.21-1.428l-.374-.222-3.874 1.276 1.064-3.758-.244-.39A9.952 9.952 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Commander le pack
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">

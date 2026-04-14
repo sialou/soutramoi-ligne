@@ -24,7 +24,7 @@ interface Testimonial {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css', './rain-section.css']
 })
 export class HomeComponent implements OnInit, OnDestroy  {
   //serviceListe: ServiceC[] =SERVICES;
@@ -214,4 +214,18 @@ goAccueil(){
     { num:'0 F',  lbl:'Frais d\'inscription' },
   ];
 
+showRainBanner = true;
+  waRain(service: string) {
+  this.whatsapp.open(
+    `🌧️ Bonjour Soutramoi, la saison des pluies arrive et j'ai besoin d'un service de ${service}. ` +
+    `Je suis à [votre quartier]. Quand pouvez-vous intervenir ?`
+  );
+}
+
+waRainPack() {
+  this.whatsapp.open(
+    `🏡 Bonjour Soutramoi, je veux commander le *Pack Maison Sèche* à 25 000 FCFA. ` +
+    `Diagnostic caniveaux + toiture + électricité en une visite. Je suis à [votre quartier].`
+  );
+}
 }
