@@ -32,7 +32,7 @@
       <div class="rain-card-urgency">🚨 Urgence #1</div>
       <div class="rain-card-icon">🚿</div>
       <h3>Curage de caniveaux</h3>
-      <p>Caniveaux bouchés = eaux qui rentrent dans votre maison. Intervenez avant les grosses averres.</p>
+      <p>Caniveaux bouchés = eaux qui rentrent dans votre maison. Intervenez avant les grosses averses.</p>
       <div class="rain-price">
         <span class="price-from">À partir de</span>
         <span class="price-val">15 000 F</span>
@@ -264,6 +264,38 @@
       </div>
     </div>
   </section>
+  
+  <div class="row">
+<div class="col-sm-8  offset-sm-2 text-center  mb-sm-5 text-black border-bottom text-uppercase ">
+  <h2>Ils parlent de nous</h2>
+</div>
+
+<ngb-carousel *ngIf="images.length > 0" class="col-sm-8  offset-sm-2">
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let image of images.slice(0, 3)">
+        <div class="image-container">
+          <img [src]="image.url" alt="Image" class="img-fluid">
+        </div>
+        <!-- Image content for the first slide -->
+
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template ngbSlide>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let image of images.slice(3, 6)">
+        <!-- Image content for the second slide -->
+        <div class="image-container">
+          <img [src]="image.url" alt="Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+  </div>
 
   <!-- PRESTATAIRE BAND -->
   <section class="pro-band">

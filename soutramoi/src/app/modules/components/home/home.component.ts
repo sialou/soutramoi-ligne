@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
+
 import { interval,Subscription } from 'rxjs';
 import { Service } from 'src/app/models/service';
 import { ServicesService } from 'src/app/services/service.service';
@@ -57,6 +58,49 @@ export class HomeComponent implements OnInit, OnDestroy  {
     // Add more testimonials as needed
   ];
 
+    images2 = [
+    { id: 1, url: '../../../assets/awe.jpg' },
+    { id: 2, url: '../../../assets/orange_corners.jpg' },
+    { id: 3, url: '../../../assets/startup.png' },
+    { id: 4, url: '../../../assets/baab.png' },
+    { id: 5, url: '../../../assets/awe.jpg' },
+    { id: 6, url: '../../../assets/orange_corners.jpg' },
+    // Add more image objects as needed
+  ];
+  currentImageIndex: number = 0;
+  autoplayInterval: number = 3000; // milliseconds
+  autoplaySubscription: Subscription;
+
+  ngOnInit(): void {
+    if (this.autoplayInterval > 0) {
+      this.startAutoplay();
+    }
+  }
+
+  ngOnDestroy(): void {
+    this.stopAutoplay();
+  }
+
+  next() {
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.images2.length;
+  }
+
+  prev() {
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.images2.length) % this.images2.length;
+  }
+
+  startAutoplay() {
+    this.autoplaySubscription = interval(this.autoplayInterval).subscribe(() => {
+      this.next();
+    });
+  }
+
+  stopAutoplay() {
+    if (this.autoplaySubscription) {
+      this.autoplaySubscription.unsubscribe();
+    }
+  }
+
  /* currentTestimonialIndex: number = 0;
   autoplayInterval: number = 5000; // milliseconds
   autoplaySubscription: Subscription;
@@ -82,12 +126,7 @@ export class HomeComponent implements OnInit, OnDestroy  {
       this.autoplaySubscription.unsubscribe();
     }
   }*/
-  ngOnInit(): void {
-   // this.getJobList();
-    /*if (this.autoplayInterval > 0) {
-      this.startAutoplay();
-    }*/
-  }
+ 
 
   /*loadData() {
     this.job.getJobs().subscribe(data => {
@@ -140,11 +179,11 @@ export class HomeComponent implements OnInit, OnDestroy  {
      */
   //  }
 
-    ngOnDestroy(): void{
+   /* ngOnDestroy(): void{
 
      // this.stopAutoplay();
-      this.myvardata?.unsubscribe
-    }
+      //this.myvardata?.unsubscribe
+    }*/
 
     //selectService(service: Service){
       /*selectService(serviceId: string){

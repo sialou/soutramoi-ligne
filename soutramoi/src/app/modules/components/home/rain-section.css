@@ -1,10 +1,10 @@
 /* ============================================================
-   CSS À AJOUTER à la fin de home.component.css
+   REMPLACEZ tout le contenu de rain-section.css par ceci
    ============================================================ */
 
 /* BANNIÈRE */
 .rain-banner {
-  background: linear-gradient(90deg, #0369A1, #0EA5E9);
+  background: linear-gradient(90deg, #0EA5E9, #38BDF8);
   color: #fff;
   padding: 10px 5%;
   display: flex;
@@ -13,24 +13,24 @@
   font-size: 13px;
   flex-wrap: wrap;
 }
-.rain-banner-text { flex: 1; min-width: 200px; }
+.rain-banner-text { flex: 1; min-width: 200px; font-weight: 500; }
 .rain-banner-cta {
-  background: rgba(255,255,255,.2);
+  background: rgba(255,255,255,.25);
   color: #fff;
   padding: 5px 14px;
   border-radius: 99px;
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid rgba(255,255,255,.3);
+  border: 1px solid rgba(255,255,255,.4);
   white-space: nowrap;
   transition: .2s;
 }
-.rain-banner-cta:hover { background: rgba(255,255,255,.3); }
+.rain-banner-cta:hover { background: rgba(255,255,255,.4); }
 .rain-banner-close {
   background: none;
   border: none;
-  color: rgba(255,255,255,.7);
+  color: rgba(255,255,255,.8);
   cursor: pointer;
   font-size: 14px;
   padding: 4px;
@@ -38,34 +38,40 @@
 }
 .rain-banner-close:hover { color: #fff; }
 
-/* SECTION PLUIES */
+/* SECTION PLUIES — CLAIRE ET JOYEUSE */
 .rain-section {
-  background: linear-gradient(180deg, #0F172A 0%, #0C2340 100%);
+  background: linear-gradient(160deg, #EFF8FF 0%, #E0F2FE 50%, #F0FDF4 100%);
   padding: 60px 5%;
   position: relative;
   overflow: hidden;
+  border-top: 3px solid #0EA5E9;
+  border-bottom: 3px solid #0EA5E9;
 }
 
-/* Effet pluie décoratif */
-.rain-section::before {
+/* Cercles décoratifs clairs */
+/*.rain-section::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 60px,
-      rgba(14,165,233,.03) 60px,
-      rgba(14,165,233,.03) 61px
-    );
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  background: rgba(14,165,233,.07);
+  border-radius: 50%;
+  pointer-events: none;
+}*/
+.rain-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -60px;
+  width: 250px; height: 250px;
+  background: rgba(34,197,94,.06);
+  border-radius: 50%;
   pointer-events: none;
 }
 
 /* HEADER */
 .rain-section-head {
   text-align: center;
-  max-width: 620px;
+  max-width: 640px;
   margin: 0 auto 44px;
   position: relative;
   z-index: 1;
@@ -74,9 +80,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(14,165,233,.2);
-  border: 1px solid rgba(14,165,233,.3);
-  color: #BAE6FD;
+  background: #DBEAFE;
+  border: 1px solid #93C5FD;
+  color: #1D4ED8;
   font-size: 12px;
   font-weight: 600;
   padding: 6px 16px;
@@ -86,6 +92,7 @@
 }
 .rain-drop {
   animation: drip .8s ease-in-out infinite alternate;
+  display: inline-block;
 }
 @keyframes drip {
   from { transform: translateY(0); }
@@ -94,28 +101,32 @@
 .rain-section-head h2 {
   font-size: 38px;
   font-weight: 800;
-  color: #fff;
+  color: #0F172A;
   line-height: 1.15;
   margin-bottom: 14px;
 }
-.rain-section-head h2 span { color: #38BDF8; }
+.rain-section-head h2 span { color: #0EA5E9; }
 .rain-section-head p {
   font-size: 16px;
-  color: #94A3B8;
+  color: #475569;
   line-height: 1.6;
   margin-bottom: 16px;
 }
-.rain-section-head p strong { color: #FDE68A; }
+.rain-section-head p strong { color: #DC2626; }
 .rain-urgency {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 13px;
   color: #64748B;
+  background: #fff;
+  padding: 8px 18px;
+  border-radius: 99px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 .urgency-dot {
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: #22C55E;
   box-shadow: 0 0 0 3px rgba(34,197,94,.2);
@@ -124,7 +135,7 @@
 }
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,.2); }
-  50%       { box-shadow: 0 0 0 6px rgba(34,197,94,.1); }
+  50%       { box-shadow: 0 0 0 6px rgba(34,197,94,.08); }
 }
 
 /* GRILLE */
@@ -136,10 +147,10 @@
   z-index: 1;
 }
 
-/* CARDS */
+/* CARDS — CLAIRES */
 .rain-card {
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.08);
+  background: #fff;
+  border: 1.5px solid #E2E8F0;
   border-radius: 16px;
   padding: 22px;
   cursor: pointer;
@@ -147,20 +158,22 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  box-shadow: 0 2px 12px rgba(14,165,233,.06);
 }
 .rain-card:hover {
-  background: rgba(255,255,255,.09);
-  border-color: rgba(14,165,233,.4);
+  border-color: #0EA5E9;
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(14,165,233,.15);
+  box-shadow: 0 10px 32px rgba(14,165,233,.15);
 }
+
+/* TOP CARDS — accentuées en rouge clair */
 .top-card {
-  border-color: rgba(226,75,74,.3);
-  background: rgba(226,75,74,.06);
+  border-color: #FECACA;
+  background: linear-gradient(135deg, #FFF5F5, #fff);
 }
 .top-card:hover {
-  border-color: rgba(226,75,74,.6);
-  box-shadow: 0 12px 40px rgba(226,75,74,.15);
+  border-color: #F87171;
+  box-shadow: 0 10px 32px rgba(239,68,68,.12);
 }
 
 .rain-card-urgency {
@@ -169,21 +182,23 @@
   font-weight: 700;
   padding: 3px 10px;
   border-radius: 99px;
-  background: rgba(226,75,74,.2);
-  color: #F09595;
+  background: #FEE2E2;
+  color: #DC2626;
   width: fit-content;
   letter-spacing: .04em;
 }
+
 .rain-card-icon { font-size: 30px; }
+
 .rain-card h3 {
   font-size: 16px;
   font-weight: 700;
-  color: #fff;
+  color: #0F172A;
   margin: 0;
 }
 .rain-card p {
   font-size: 13px;
-  color: #94A3B8;
+  color: #64748B;
   line-height: 1.55;
   margin: 0;
   flex: 1;
@@ -194,12 +209,12 @@
   flex-direction: column;
   gap: 2px;
 }
-.price-from { font-size: 11px; color: #64748B; }
+.price-from { font-size: 11px; color: #94A3B8; }
 .price-val  {
   font-family: 'Outfit', sans-serif;
   font-size: 22px;
   font-weight: 800;
-  color: #38BDF8;
+  color: #0EA5E9;
 }
 
 .rain-includes {
@@ -211,8 +226,6 @@
   font-size: 12px;
   color: #64748B;
 }
-.rain-includes span:first-child,
-.rain-includes span { color: #475569; }
 
 .btn-rain-wa {
   display: flex;
@@ -236,18 +249,17 @@
 
 /* PACK CARD */
 .rain-pack {
-  background: linear-gradient(135deg, rgba(250,238,218,.1), rgba(14,165,233,.08));
-  border: 1.5px solid rgba(250,199,117,.25);
-  grid-column: span 1;
+  background: linear-gradient(135deg, #FFFBEB, #FFF7ED);
+  border: 1.5px solid #FDE68A;
 }
 .rain-pack:hover {
-  border-color: rgba(250,199,117,.5);
-  box-shadow: 0 12px 40px rgba(250,199,117,.1);
+  border-color: #F59E0B;
+  box-shadow: 0 10px 32px rgba(245,158,11,.15);
 }
 .rain-pack-badge {
   display: inline-block;
-  background: rgba(250,199,117,.2);
-  color: #FAC775;
+  background: #FEF3C7;
+  color: #92400E;
   font-size: 11px;
   font-weight: 700;
   padding: 3px 10px;
@@ -255,14 +267,14 @@
   letter-spacing: .04em;
   width: fit-content;
 }
-.rain-pack .price-val { color: #FAC775; }
+.rain-pack .price-val { color: #D97706; }
 .btn-rain-pack {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   width: 100%;
-  background: linear-gradient(135deg, #F97316, #EF9F27);
+  background: linear-gradient(135deg, #F59E0B, #D97706);
   color: #fff;
   border: none;
   padding: 12px;
@@ -274,10 +286,7 @@
   font-family: 'DM Sans', sans-serif;
   margin-top: auto;
 }
-.btn-rain-pack:hover {
-  background: linear-gradient(135deg, #EA580C, #D97706);
-  transform: translateY(-1px);
-}
+.btn-rain-pack:hover { background: linear-gradient(135deg, #D97706, #B45309); transform: translateY(-1px); }
 
 /* RESPONSIVE */
 @media(max-width: 900px) {

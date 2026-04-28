@@ -80,6 +80,50 @@
 .pro-mini-num { font-family:'Outfit',sans-serif; font-size:30px; font-weight:800; color:#fff; }
 .pro-mini-lbl { font-size:12px; color:var(--blue-light); margin-top:4px; }
 
+
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-container img {
+  max-width: 100%; /* Assurez-vous que l'image ne dépasse pas la largeur du conteneur */
+  height: auto; /* Ajustez la hauteur en fonction de la largeur pour maintenir les proportions de l'image */
+}
+
 @media(max-width:900px){
   .hero { grid-template-columns:1fr; gap:40px; }
   .hero h1 { font-size:36px; }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class WhatsappService {
-  private readonly phone = '2250757994846'; // ← REMPLACEZ PAR VOTRE NUMÉRO
+  private readonly phone = '2250710681405'; // ← REMPLACEZ PAR VOTRE NUMÉRO
 
   open(message: string = 'Bonjour Soutramoi, j\'ai besoin d\'aide') {
     const encoded = encodeURIComponent(message);
