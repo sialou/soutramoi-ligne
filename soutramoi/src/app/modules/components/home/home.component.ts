@@ -75,6 +75,9 @@ export class HomeComponent implements OnInit, OnDestroy  {
     if (this.autoplayInterval > 0) {
       this.startAutoplay();
     }
+    
+    this.initFetes();
+   
   }
 
   ngOnDestroy(): void {
@@ -99,6 +102,55 @@ export class HomeComponent implements OnInit, OnDestroy  {
     if (this.autoplaySubscription) {
       this.autoplaySubscription.unsubscribe();
     }
+  }
+
+
+    showFetesBanner = true;
+  joursAvantNoel = 0;
+
+  flocons: { x: number; dur: number; delay: number; size: number; opacity: number }[] = [];
+  bulbes: { x: number; y: number; color: string }[] = [];
+
+ 
+
+  private initFetes(): void {
+    // Calcul du nombre de jours avant Noël (25 décembre)
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    let noel = new Date(currentYear, 11, 25); // 11 = décembre
+
+    // Si Noël est déjà passé cette année, viser l'année prochaine
+    if (today > noel) {
+      noel = new Date(currentYear + 1, 11, 25);
+    }
+
+    const diffTime = noel.getTime() - today.getTime();
+    this.joursAvantNoel = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    // Génération des flocons de neige
+    this.flocons = Array.from({ length: 40 }, () => ({
+      x: Math.random() * 100,
+      dur: 8 + Math.random() * 10,
+      delay: Math.random() * 10,
+      size: 10 + Math.random() * 14,
+      opacity: 0.3 + Math.random() * 0.5
+    }));
+
+    // Génération des ampoules de la guirlande
+    const colors = ['#E24B4A', '#FDE68A', '#22C55E', '#3B82F6'];
+    this.bulbes = Array.from({ length: 9 }, (_, i) => ({
+      x: 50 + i * 112.5,
+      y: i % 2 === 0 ? 15 : 28,
+      color: colors[i % colors.length]
+    }));
+  }
+
+  waFetes(): void {
+    const numero = '2250710681405'; // ← remplace par ton vrai numéro WhatsApp
+    const message = encodeURIComponent(
+      "Bonjour ! Je suis intéressé(e) par l'offre spéciale fêtes -20% (Code : FETES2025) 🎄"
+    );
+    window.open(`https://wa.me/${numero}?text=${message}`, '_blank');
   }
 
  /* currentTestimonialIndex: number = 0;
