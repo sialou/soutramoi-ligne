@@ -122,7 +122,7 @@ export class AbonnementComponent  {
 
   whyItems = [
     { icon: '🌡️', title: 'Abidjan, c\'est chaud toute l\'année', desc: 'Un clim entretenu régulièrement consomme 30% d\'énergie en moins et dure 3× plus longtemps.' },
-    { icon: '💸', title: 'Évitez les grosses pannes coûteuses', desc: 'Un nettoyage à 10 000 F évite une réparation à 80 000 F. L\'entretien préventif, c\'est rentable.' },
+    { icon: '💸', title: 'Évitez les grosses pannes coûteuses', desc: 'Un nettoyage à 10 000 FCFA évite une réparation à 80 000 F. L\'entretien préventif, c\'est rentable.' },
     { icon: '😌', title: 'Zéro souci, on gère tout', desc: 'Vous recevez un rappel WhatsApp avant chaque passage. Vous n\'avez rien à chercher ni à organiser.' },
   ];
 

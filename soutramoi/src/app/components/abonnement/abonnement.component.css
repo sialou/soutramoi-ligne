@@ -143,4 +143,5 @@
   .mini-plans-container {
     grid-template-columns: 1fr;
   }
+  .price-big{ font-size: 30px;}
 }

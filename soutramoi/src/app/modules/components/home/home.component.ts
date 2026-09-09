@@ -226,12 +226,12 @@ goAccueil(){
   ];
 
   services = [
-    { icon:'❄️', nom:'Climatisation & Froid',  price:'Nettoyage split : 8 000 – 12 000 F\nRecharge gaz : à partir de 20 000 F',    typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
-    { icon:'🔧', nom:'Plomberie',               price:'Débouchage : à partir de 8 000 F\nVisite diagnostic : 2 500 F',             typeClass:'badge-visit', typeLabel:'🔍 Visite + devis' },
-    { icon:'⚡', nom:'Électricité',             price:'Prise / interrupteur : à partir de 8 000 F\nVisite diagnostic : 2 500 F',    typeClass:'badge-visit', typeLabel:'🔍 Visite + devis' },
-    { icon:'🎨', nom:'Peinture',                price:'1 pièce (main d\'œuvre) : 25 000 – 40 000 F\nGrand chantier : sur devis',    typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
-    { icon:'🚪', nom:'Menuiserie',              price:'Réparation porte/serrure : 8 000 – 20 000 F\nSur mesure : selon matériaux',  typeClass:'badge-devis', typeLabel:'📋 Sur devis' },
-    { icon:'🌿', nom:'Jardinage',               price:'Tonte pelouse : 5 000 – 10 000 F\nEntretien complet : à partir de 20 000 F', typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
+    { icon:'❄️', nom:'Climatisation & Froid',  price:'Nettoyage split : 8 000 – 12 000 FCFA\nRecharge gaz : à partir de 20 000 FCFA',    typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
+    { icon:'🔧', nom:'Plomberie',               price:'Débouchage : à partir de 8 000 FCFA\nVisite diagnostic : 2 500 FCFA',             typeClass:'badge-visit', typeLabel:'🔍 Visite + devis' },
+    { icon:'⚡', nom:'Électricité',             price:'Prise / interrupteur : à partir de 8 000 FCFA\nVisite diagnostic : 2 500 FCFA',    typeClass:'badge-visit', typeLabel:'🔍 Visite + devis' },
+    { icon:'🎨', nom:'Peinture',                price:'1 pièce (main d\'œuvre) : 25 000 – 40 000 FCFA\nGrand chantier : sur devis',    typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
+    { icon:'🚪', nom:'Menuiserie',              price:'Réparation porte/serrure : 8 000 – 20 000 FCFA\nSur mesure : selon matériaux',  typeClass:'badge-devis', typeLabel:'📋 Sur devis' },
+    { icon:'🌿', nom:'Jardinage',               price:'Tonte pelouse : 5 000 – 10 000 FCFA\nEntretien complet : à partir de 20 000 FCFA', typeClass:'badge-fixed', typeLabel:'✓ Prix fixe affiché' },
   ];
 
   steps = [
